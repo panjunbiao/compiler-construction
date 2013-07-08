@@ -1,2 +1,0 @@
-RFC3261-comment="(" RFC3261-comment-suffix
-RFC3261-comment-suffix=*("0"/("(" RFC3261-comment-suffix)) ")"
