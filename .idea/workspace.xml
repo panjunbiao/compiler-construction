@@ -2,14 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1e72a5c-41f1-40a2-8a48-289a769e0070" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="compiler-construction.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1373266937054" ignored="false" />
+    <file path="/Dummy.txt" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1373266949112" ignored="false" />
     <file path="$USER_HOME$/Documents/IdeaProjects/sip4x/.idea/workspace.xml" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1373264468231" ignored="false" />
     <file path="/a.dummy" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1373264971582" ignored="false" />
     <file path="/NumValTest.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1373265231274" ignored="false" />
+    <file path="/.gitignore" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1373267159583" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,10 +160,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JavaParser.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="JavaParser.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/generator/JavaParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="34" selection-start="369" selection-end="369" vertical-scroll-proportion="0.31914893">
+            <state line="7" column="34" selection-start="369" selection-end="369" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="6" selection-start="51" selection-end="51" vertical-scroll-proportion="0.2631579">
               <folding />
             </state>
           </provider>
@@ -185,7 +196,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/analyzer/DefinitionAnalyzer.java" />
         <option value="$PROJECT_DIR$/src/analyzer/RegularAnalyzer.java" />
         <option value="$PROJECT_DIR$/src/automata/DFA.java" />
         <option value="$PROJECT_DIR$/src/automata/DFAState.java" />
@@ -201,6 +211,7 @@
         <option value="$PROJECT_DIR$/src/automata/NFAUtils.java" />
         <option value="$PROJECT_DIR$/src/automata/RangedDFATransit.java" />
         <option value="$PROJECT_DIR$/src/generator/JavaParser.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -490,7 +501,11 @@
       <created>1373266825020</created>
       <updated>1373266825020</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Ignore output directory.">
+      <created>1373266953054</created>
+      <updated>1373266953054</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -713,16 +728,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/src/generator/JavaParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="28" selection-start="50" selection-end="50" vertical-scroll-proportion="0.2631579">
+        <state line="7" column="34" selection-start="369" selection-end="369" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/generator/JavaParser.java">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="34" selection-start="369" selection-end="369" vertical-scroll-proportion="0.31914893">
+        <state line="6" column="6" selection-start="51" selection-end="51" vertical-scroll-proportion="0.2631579">
           <folding />
         </state>
       </provider>
