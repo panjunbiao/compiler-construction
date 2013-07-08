@@ -1,0 +1,40 @@
+RFC2396-URI-reference = [RFC2396-absoluteURI / RFC2396-relativeURI] ["#" RFC2396-fragment]
+RFC2396-absoluteURI = RFC2396-scheme ":" (RFC2396-hier-part / RFC2396-opaque-part)
+RFC2396-relativeURI = (RFC2396-net-path / RFC2396-abs-path / RFC2396-rel-path) ["?" RFC2396-query]
+RFC2396-hier-part = (RFC2396-net-path / RFC2396-abs-path) ["?" RFC2396-query]
+RFC2396-opaque-part = RFC2396-uric-no-slash *RFC2396-uric
+RFC2396-uric-no-slash = RFC2396-unreserved / RFC2396-escaped / ";" / "?" / ":" / "@" / "&" / "=" / "+" / "$" / ","
+RFC2396-net-path = "//" RFC2396-authority [RFC2396-abs-path]
+RFC2396-abs-path = "/" RFC2396-path-segments
+RFC2396-rel-path = RFC2396-rel-segment [RFC2396-abs-path]
+RFC2396-rel-segment = 1*(RFC2396-unreserved / RFC2396-escaped / ";" / "@" / "&" / "=" / "+" / "$" / ",")
+RFC2396-scheme = RFC2396-alpha *(RFC2396-alpha / RFC2396-digit / "+" / "-" / ".")
+RFC2396-authority = RFC2396-server / RFC2396-reg-name
+RFC2396-reg-name = 1*(RFC2396-unreserved / RFC2396-escaped / "$" / "," / ";" / ":" / "@" / "&" / "=" / "+")
+RFC2396-server = [[RFC2396-userinfo "@"] RFC2396-hostport]
+RFC2396-userinfo = *(RFC2396-unreserved / RFC2396-escaped / ";" / ":" / "&" / "=" / "+" / "$" / ",")
+RFC2396-hostport = RFC2396-host [":" RFC2396-port]
+RFC2396-host = RFC2396-hostname / RFC2396-IPv4address
+RFC2396-hostname = *(RFC2396-domainlabel ".") RFC2396-toplabel ["."]
+RFC2396-domainlabel = RFC2396-alphanum / RFC2396-alphanum *(RFC2396-alphanum / "-") RFC2396-alphanum
+RFC2396-toplabel = RFC2396-alpha / RFC2396-alpha *(RFC2396-alphanum / "-") RFC2396-alphanum
+RFC2396-IPv4address = 1*RFC2396-digit "." 1*RFC2396-digit "." 1*RFC2396-digit "." 1*RFC2396-digit
+RFC2396-port = *RFC2396-digit
+RFC2396-path = [RFC2396-abs-path / RFC2396-opaque-part]
+RFC2396-path-segments = RFC2396-segment *("/" RFC2396-segment)
+RFC2396-segment = *RFC2396-pchar *(";" RFC2396-param)
+RFC2396-param = *RFC2396-pchar
+RFC2396-pchar = RFC2396-unreserved / RFC2396-escaped / ":" / "@" / "&" / "=" / "+" / "$" / ","
+RFC2396-query = *RFC2396-uric
+RFC2396-fragment = *RFC2396-uric
+RFC2396-uric = RFC2396-reserved / RFC2396-unreserved / RFC2396-escaped
+RFC2396-reserved = ";" / "/" / "?" / ":" / "@" / "&" / "=" / "+" / "$" / ","
+RFC2396-unreserved = RFC2396-alphanum / RFC2396-mark
+RFC2396-mark = "-" / "_" / "." / "!" / "~" / "*" / "'" / "(" / ")"
+RFC2396-escaped = "%" RFC2396-hex RFC2396-hex
+RFC2396-hex = RFC2396-digit / "A" / "B" / "C" / "D" / "E" / "F" / "a" / "b" / "c" / "d" / "e" / "f"
+RFC2396-alphanum = RFC2396-alpha / RFC2396-digit
+RFC2396-alpha = RFC2396-lowalpha / RFC2396-upalpha
+RFC2396-lowalpha = "a" / "b" / "c" / "d" / "e" / "f" / "g" / "h" / "i" / "j" / "k" / "l" / "m" / "n" / "o" / "p" / "q" / "r" / "s" / "t" / "u" / "v" / "w" / "x" / "y" / "z"
+RFC2396-upalpha = "A" / "B" / "C" / "D" / "E" / "F" / "G" / "H" / "I" / "J" / "K" / "L" / "M" / "N" / "O" / "P" / "Q" / "R" / "S" / "T" / "U" / "V" / "W" / "X" / "Y" / "Z"
+RFC2396-digit = "0" / "1" / "2" / "3" / "4" / "5" / "6" / "7" / "8" / "9"
