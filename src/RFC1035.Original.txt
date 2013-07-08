@@ -1,6 +1,0 @@
-domain=subdomain/" "
-subdomain=label *("." label)
-label=letter [[ldh-str] let-dig]
-ldh-str=1*(let-dig-hyp)
-let-dig-hyp=let-dig/"-"
-let-dig=letter/digit

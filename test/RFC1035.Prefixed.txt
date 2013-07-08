@@ -1,0 +1,6 @@
+RFC1035-domain = RFC1035-subdomain / " "
+RFC1035-subdomain = RFC1035-label *("." RFC1035-label)
+RFC1035-label = RFC1035-letter [[RFC1035-ldh-str] RFC1035-let-dig]
+RFC1035-ldh-str = 1*(RFC1035-let-dig-hyp)
+RFC1035-let-dig-hyp = RFC1035-let-dig / "-"
+RFC1035-let-dig = RFC1035-letter / RFC1035-digit

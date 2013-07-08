@@ -2,12 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1e72a5c-41f1-40a2-8a48-289a769e0070" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Bridge.txt" afterPath="$PROJECT_DIR$/test/Bridge.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/RFC1035.Original.txt" afterPath="$PROJECT_DIR$/test/RFC1035.Original.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/RFC1035.Prefixed.txt" afterPath="$PROJECT_DIR$/test/RFC1035.Prefixed.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/RFC2234.Demo.1.txt" afterPath="$PROJECT_DIR$/test/RFC2234.Demo.1.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/RFC2234.Demo.2.txt" afterPath="$PROJECT_DIR$/test/RFC2234.Demo.2.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/RFC2234.Demo.3.txt" afterPath="$PROJECT_DIR$/test/RFC2234.Demo.3.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/RFC2234.Demo.4.txt" afterPath="$PROJECT_DIR$/test/RFC2234.Demo.4.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/RFC2234.Demo.5.txt" afterPath="$PROJECT_DIR$/test/RFC2234.Demo.5.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/RFC2234.Demo.6.txt" afterPath="$PROJECT_DIR$/test/RFC2234.Demo.6.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/RFC2234.Original.txt" afterPath="$PROJECT_DIR$/test/RFC2234.Original.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/RFC2234.Prefixed.txt" afterPath="$PROJECT_DIR$/test/RFC2234.Prefixed.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/RFC2396.Original.txt" afterPath="$PROJECT_DIR$/test/RFC2396.Original.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/RFC2396.Prefixed.txt" afterPath="$PROJECT_DIR$/test/RFC2396.Prefixed.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/RFC2616.Original.txt" afterPath="$PROJECT_DIR$/test/RFC2616.Original.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/RFC2616.Prefixed.txt" afterPath="$PROJECT_DIR$/test/RFC2616.Prefixed.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/RFC2806.Original.txt" afterPath="$PROJECT_DIR$/test/RFC2806.Original.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/RFC2806.Prefixed.txt" afterPath="$PROJECT_DIR$/test/RFC2806.Prefixed.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/RFC3261.Original.txt" afterPath="$PROJECT_DIR$/test/RFC3261.Original.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/RFC3261.Prefixed.txt" afterPath="$PROJECT_DIR$/test/RFC3261.Prefixed.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/SIP-Closure-Comment.txt" afterPath="$PROJECT_DIR$/test/SIP-Closure-Comment.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/SIP-Closure.txt" afterPath="$PROJECT_DIR$/test/SIP-Closure.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test.txt" afterPath="$PROJECT_DIR$/test/test.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="compiler-construction.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1373266949112" ignored="false" />
+    <file path="/Dummy.txt" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1373267178598" ignored="false" />
     <file path="$USER_HOME$/Documents/IdeaProjects/sip4x/.idea/workspace.xml" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1373264468231" ignored="false" />
     <file path="/a.dummy" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1373264971582" ignored="false" />
     <file path="/NumValTest.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1373265231274" ignored="false" />
@@ -160,19 +181,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JavaParser.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="JavaParser.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/generator/JavaParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="34" selection-start="369" selection-end="369" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="6" selection-start="51" selection-end="51" vertical-scroll-proportion="0.2631579">
+            <state line="10" column="9" selection-start="501" selection-end="501" vertical-scroll-proportion="0.5102041">
               <folding />
             </state>
           </provider>
@@ -268,6 +280,34 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="compiler-construction" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="compiler-construction" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="compiler-construction" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="compiler-construction" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
@@ -294,6 +334,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/test" />
+      <recent name="$PROJECT_DIR$/test/abnf" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
@@ -505,7 +547,11 @@
       <created>1373266953054</created>
       <updated>1373266953054</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Ignore output directory.">
+      <created>1373267183459</created>
+      <updated>1373267183459</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -521,13 +567,13 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32935154" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24959481" sideWeight="0.67064846" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3890785" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24959481" sideWeight="0.6109215" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3890785" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -728,16 +774,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/generator/JavaParser.java">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="34" selection-start="369" selection-end="369" vertical-scroll-proportion="0.0">
+        <state line="6" column="64" selection-start="51" selection-end="51" vertical-scroll-proportion="0.2631579">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/src/generator/JavaParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="6" selection-start="51" selection-end="51" vertical-scroll-proportion="0.2631579">
+        <state line="10" column="9" selection-start="501" selection-end="501" vertical-scroll-proportion="0.5102041">
           <folding />
         </state>
       </provider>
