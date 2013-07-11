@@ -8,4 +8,5 @@ package automata;
  * To change this template use File | Settings | File Templates.
  */
 public interface FAState {
+
 }

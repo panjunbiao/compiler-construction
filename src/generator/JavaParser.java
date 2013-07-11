@@ -121,44 +121,48 @@ public class JavaParser {
         RegularAnalyzer regularAnalyzer = new RegularAnalyzer(ruleList);
         List<Rule> regularRuleList = regularAnalyzer.getRegularRules();
 
-        for(int index = 0; index < regularRuleList.size(); index ++) {
-            if ("RFC3261-To".equals(regularRuleList.get(index).getRuleName().toString())) continue;
-            if ("RFC3261-rplyto-spec".equals(regularRuleList.get(index).getRuleName().toString())) continue;
-            if ("RFC3261-Reply-To".equals(regularRuleList.get(index).getRuleName().toString())) continue;
-            if ("RFC3261-Record-Route".equals(regularRuleList.get(index).getRuleName().toString())) continue;
-            if ("RFC3261-challenge".equals(regularRuleList.get(index).getRuleName().toString())) continue;
-            if ("RFC3261-Proxy-Authenticate".equals(regularRuleList.get(index).getRuleName().toString())) continue;
-            if ("RFC3261-from-spec".equals(regularRuleList.get(index).getRuleName().toString())) continue;
-            if ("RFC3261-From".equals(regularRuleList.get(index).getRuleName().toString())) continue;
-            if ("RFC3261-contact-param".equals(regularRuleList.get(index).getRuleName().toString())) continue;
-            if ("RFC3261-Contact".equals(regularRuleList.get(index).getRuleName().toString())) continue;
-            if ("RFC3261-WWW-Authenticate".equals(regularRuleList.get(index).getRuleName().toString())) continue;
-            if ("RFC3261-Route".equals(regularRuleList.get(index).getRuleName().toString())) continue;
-            if ("RFC3261-message-header".equals(regularRuleList.get(index).getRuleName().toString())) continue;
-            if ("RFC3261-Request".equals(regularRuleList.get(index).getRuleName().toString())) continue;
-            if ("RFC3261-Response".equals(regularRuleList.get(index).getRuleName().toString())) continue;
-            if ("RFC3261-SIP-message".equals(regularRuleList.get(index).getRuleName().toString())) continue;
-            System.out.print("Regular Rule List[" + index + "], ");
-
-//            System.out.print("Converting NFA " + regularRuleList.get(index).getRuleName().toString());
-            NFA nfa = javaParser.generateNFA(regularRuleList.get(index).getRuleName().toString(), regularRuleList);
-//            System.out.println(" OK");
-//            System.out.println("Total states = " + nfa.getStateSet().size());
-//            System.out.println("Converting DFA " + regularRuleList.get(index).getRuleName().toString());
-            DFA dfa = nfa.toDFA();
-            System.out.println(regularRuleList.get(index).getRuleName().toString() + ", NFA States = " + nfa.getStateSet().size() + ", DFA States = " + dfa.getStateSet().size());
+//        for(int index = 0; index < regularRuleList.size(); index ++) {
+//            if ("RFC3261-To".equals(regularRuleList.get(index).getRuleName().toString())) continue;
+//            if ("RFC3261-rplyto-spec".equals(regularRuleList.get(index).getRuleName().toString())) continue;
+//            if ("RFC3261-Reply-To".equals(regularRuleList.get(index).getRuleName().toString())) continue;
+//            if ("RFC3261-Record-Route".equals(regularRuleList.get(index).getRuleName().toString())) continue;
+//            if ("RFC3261-challenge".equals(regularRuleList.get(index).getRuleName().toString())) continue;
+//            if ("RFC3261-Proxy-Authenticate".equals(regularRuleList.get(index).getRuleName().toString())) continue;
+//            if ("RFC3261-from-spec".equals(regularRuleList.get(index).getRuleName().toString())) continue;
+//            if ("RFC3261-From".equals(regularRuleList.get(index).getRuleName().toString())) continue;
+//            if ("RFC3261-contact-param".equals(regularRuleList.get(index).getRuleName().toString())) continue;
+//            if ("RFC3261-Contact".equals(regularRuleList.get(index).getRuleName().toString())) continue;
+//            if ("RFC3261-WWW-Authenticate".equals(regularRuleList.get(index).getRuleName().toString())) continue;
+//            if ("RFC3261-Route".equals(regularRuleList.get(index).getRuleName().toString())) continue;
+//            if ("RFC3261-message-header".equals(regularRuleList.get(index).getRuleName().toString())) continue;
+//            if ("RFC3261-Request".equals(regularRuleList.get(index).getRuleName().toString())) continue;
+//            if ("RFC3261-Response".equals(regularRuleList.get(index).getRuleName().toString())) continue;
+//            if ("RFC3261-SIP-message".equals(regularRuleList.get(index).getRuleName().toString())) continue;
+////            System.out.print("Regular Rule List[" + index + "]");
+//
+////            System.out.print("Converting NFA " + regularRuleList.get(index).getRuleName().toString());
+//            NFA nfa = javaParser.generateNFA(regularRuleList.get(index).getRuleName().toString(), regularRuleList);
+////            System.out.println(" OK");
+////            System.out.println("Total states = " + nfa.getStateSet().size());
+////            System.out.println("Converting DFA " + regularRuleList.get(index).getRuleName().toString());
+//            DFA dfa = nfa.toDFA();
+////            System.out.print(", NFA States = " + String.format("%6d", nfa.getStateSet().size()) + ", DFA States = " + String.format("%6d", dfa.getStateSet().size()));
+////            System.out.println(", " + regularRuleList.get(index).toString());
+//            dfa.setName(regularRuleList.get(index).getRuleName().toString());
 //            dfa.getStart().mergeTransits();
-//            dfa.getStart().printToDot();
-        }
+//            if (dfa.getStateSet().size() < 100) dfa.printToDot();
+////            dfa.printToDot();
+////            dfa.getStart().printToDot();
+//        }
 //        NFA nfa = javaParser.generateNFA("RFC3261-SIP-message", regularRuleList);
-//        NFA nfa = javaParser.generateNFA(args[0], regularRuleList);
-//        nfa.getStartState().printToDot();
-//        System.out.println("Total states = " + nfa.getStateSet().size());
-//        nfa.getStartState().printToDot();
-//        System.out.println("NFA print completed.");
-//        DFA dfa = nfa.toDFA();
-//        dfa.getStart().mergeTransits();
-//        dfa.getStart().printToDot();
+        NFA nfa = javaParser.generateNFA(args[0], regularRuleList);
+        nfa.getStartState().printToDot();
+        System.out.println("Total states = " + nfa.getStateSet().size());
+        nfa.getStartState().printToDot();
+        System.out.println("NFA print completed.");
+        DFA dfa = nfa.toDFA();
+        dfa.getStart().mergeTransits();
+        dfa.getStart().printToDot();
 //        NFA nfa = javaParser.generateNFA("RFC3261-SIP-message", ruleList);
 //
 //        NFAUtils.genrateDFA(nfa.getStart());//.printToDot();

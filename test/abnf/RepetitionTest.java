@@ -98,5 +98,9 @@ public class RepetitionTest {
                 .addTransit("ABC", s[1]);
         expected = new NFA(s[0], s[1]);
         Assertion.assertEquivalent(expected, nfa);
+
+        nfa = tester.test(AbnfParserFactory.newInstance("*(A B)"));
+        nfa.getStartState().printToDot();
+
     }
 }

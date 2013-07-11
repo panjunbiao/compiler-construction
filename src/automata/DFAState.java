@@ -140,10 +140,10 @@ public class DFAState {
 //            Iterator<NFAState> itTo = this.transits.get(index).getNext().getNFAStates().iterator();
 //            while (itTo.hasNext()) System.out.print(itTo.next().getId() + ", ");
 //            System.out.print(" )");
-//			System.out.print(" [label=\"");
-            System.out.print(" [label=");
+			System.out.print(" [label=\"");
+//            System.out.print(" [label=");
             System.out.print(this.mergedTransits.get(index).getInputLabel());
-            System.out.println("];");
+            System.out.println("\"];");
 //            if (DFATransitType.BYTE == this.mergedTransits.get(index).getTransitType()) {
 //                System.out.print(" [label=(");
 //                int val = this.mergedTransits.get(index).getInput();

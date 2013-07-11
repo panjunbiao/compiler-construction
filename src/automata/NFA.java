@@ -124,7 +124,7 @@ public class NFA {
     }
 
 //	public void printToDot() {
-//		System.out.println("digraph " + this.name.replaceAll("-", "_") + "{");
+//		System.out.println("digraph " + .name.replaceAll("-", "_") + "{");
 //		this.start.printToDot();
 //		System.out.println("}");
 //	}

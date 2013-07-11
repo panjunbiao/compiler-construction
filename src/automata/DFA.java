@@ -39,6 +39,7 @@ public class DFA {
 		
 	private String name;
 	public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
 	
 	private DFAState start;
 	public DFAState getStart() { return start; }
@@ -70,11 +71,11 @@ public class DFA {
         this.start = start;
     }
 	
-//	public void printToDot() {
-//		System.out.println("digraph " + this.name.replaceAll("-", "_") + "{");
-//		this.start.printToDot();
-//		System.out.println("}");
-//	}
+	public void printToDot() {
+		System.out.println("digraph " + this.name.replaceAll("-", "_") + " {");
+		this.start.printToDot();
+		System.out.println("}");
+	}
 //
 //	public void print() {
 //		this.start.print();
