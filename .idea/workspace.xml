@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b1e72a5c-41f1-40a2-8a48-289a769e0070" name="Default" comment="To adjust automata.">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/automata/DFA.java" afterPath="$PROJECT_DIR$/src/automata/DFA.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/automata/DFAState.java" afterPath="$PROJECT_DIR$/src/automata/DFAState.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/automata/FAState.java" afterPath="$PROJECT_DIR$/src/automata/FAState.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/generator/JavaParser.java" afterPath="$PROJECT_DIR$/src/generator/JavaParser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/automata/NFA.java" afterPath="$PROJECT_DIR$/src/automata/NFA.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/automata/NFATest.java" afterPath="$PROJECT_DIR$/test/automata/NFATest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/abnf/RepetitionTest.java" afterPath="$PROJECT_DIR$/test/abnf/RepetitionTest.java" />
+    <list default="true" id="b1e72a5c-41f1-40a2-8a48-289a769e0070" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="compiler-construction.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1373508751380" ignored="false" />
+    <file path="/Dummy.txt" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1373508766237" ignored="false" />
     <file path="$USER_HOME$/Documents/IdeaProjects/sip4x/.idea/workspace.xml" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1373264468231" ignored="false" />
     <file path="/a.dummy" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1373264971582" ignored="false" />
     <file path="/NumValTest.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1373265231274" ignored="false" />
@@ -106,7 +98,7 @@
       <file leaf-file-name="NFATest.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/automata/NFATest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="0" selection-start="43" selection-end="43" vertical-scroll-proportion="0.17492712">
+            <state line="12" column="37" selection-start="229" selection-end="229" vertical-scroll-proportion="0.5278592">
               <folding />
             </state>
           </provider>
@@ -260,10 +252,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="compiler-construction" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="compiler-construction" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -569,7 +557,11 @@
       <created>1373271645735</created>
       <updated>1373271645735</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="To adjust automata.">
+      <created>1373508779092</created>
+      <updated>1373508779092</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -584,12 +576,12 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32764506" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24959481" sideWeight="0.67235494" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24959481" sideWeight="0.6712329" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39041096" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -784,7 +776,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/automata/NFATest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="43" selection-end="43" vertical-scroll-proportion="0.17492712">
+        <state line="12" column="37" selection-start="229" selection-end="229" vertical-scroll-proportion="0.5278592">
           <folding />
         </state>
       </provider>
