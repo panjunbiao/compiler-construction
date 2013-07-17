@@ -165,11 +165,10 @@ public class NumVal implements Element {//, Terminal {
 
         NFAState current = startState;
         NFAState next = null;
-        for(int j = 0; j < values.size(); j ++) {
-            int val = Integer.valueOf(values.get(j), radix);
-            if (j < values.size() - 1) current = current.addTransit((byte)val);
-            else current = current.addTransit((int)val, acceptingState);
+        for(int j = 0; j < values.size() - 1; j ++) {
+            current = current.addTransit(Integer.valueOf(values.get(j), radix));
         }
+        current.addTransit(Integer.valueOf(values.get(values.size() - 1), radix), acceptingState);
     }
 
 }

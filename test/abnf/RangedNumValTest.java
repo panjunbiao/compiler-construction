@@ -1,10 +1,11 @@
 package abnf;
 
+import automata.NFAStateFactory;
 import junit.framework.Assert;
 import org.junit.Test;
 import automata.NFA;
 import automata.NFAState;
-import automata.NFATransitType;
+//import automata.NFATransitType;
 //import automata.NFATransitType;
 
 import java.io.IOException;
@@ -34,21 +35,15 @@ public class RangedNumValTest {
 
         NFA nfa;
         NFAState state;
+        NFA expected;
+        NFAState[] s;
 
         nfa = tester.test(AbnfParserFactory.newInstance("%x80-ff"));
 
-        state = nfa.getStartState();
-        Assert.assertEquals(128, state.getTransits().size());
-        for(int index = 0; index < 128; index ++) {
-            Assert.assertEquals(NFATransitType.BYTE, state.getTransits().get(index).getTransitType());
-            Assert.assertEquals((index+128), state.getTransits().get(index).getInput());
-        }
-        for(int index = 1; index < 128; index ++) {
-            Assert.assertEquals(state.getTransits().get(index-1).getNext(),
-                    state.getTransits().get(index).getNext());
-        }
 
-        state = state.getTransits().get(0).getNext();
-        Assert.assertTrue(nfa.getAcceptingStates().contains(state));
+        s = NFAStateFactory.newInstances(2);
+        for(int input = 0x80; input <= 0xff; input ++) s[0].addTransit(input, s[1]);
+        expected = new NFA(s[0], s[1]);
+        Assertion.assertEquivalent(expected, nfa);
     }
 }

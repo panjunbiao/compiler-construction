@@ -37,26 +37,27 @@ public class ConcatenationTest {
         expected = new NFA(s[0], s[1]);
         Assertion.assertEquivalent(expected, nfa);
 
-        nfa = tester.test(AbnfParserFactory.newInstance("ABC [a b] (C/D) *E 1*3F 2*G %x11.22"));
+        nfa = tester.test(AbnfParserFactory.newInstance("%x30 [%x31 %x32] (%x33/%x34) *%x35 1*3%x36 2*%x37 %x11.22"));
+        nfa.getStartState().printToDot();
         s = NFAStateFactory.newInstances(13);
-        s[0]    .addTransit("ABC", s[2])
+        s[0]    .addTransit('0', s[2])
                 .addTransit(s[3]);
-        s[2]    .addTransit("a", s[4])
-                .addTransit("b", s[3]);
-        s[3]    .addTransit("C", s[5]);
-        s[3]    .addTransit("D", s[5]);
+        s[2]    .addTransit('1', s[4])
+                .addTransit('2', s[3]);
+        s[3]    .addTransit('3', s[5]);
+        s[3]    .addTransit('4', s[5]);
         s[5]    .addTransit(s[6])
-                .addTransit("E", s[6])
-                .addTransit("F", s[8])
+                .addTransit('5', s[6])
+                .addTransit('6', s[8])
                 .addTransit(s[7]);
-        s[8]    .addTransit("F", s[9])
+        s[8]    .addTransit('6', s[9])
                 .addTransit(s[7]);
-        s[9]    .addTransit("F", s[7]);
-        s[7]    .addTransit("G", s[11])
-                .addTransit("G", s[10])
-                .addTransit("G", s[10])
-                .addTransit((byte)0x11, s[12])
-                .addTransit((byte)0x22, s[1]);
+        s[9]    .addTransit('6', s[7]);
+        s[7]    .addTransit('7', s[11])
+                .addTransit('7', s[10])
+                .addTransit('7', s[10])
+                .addTransit(0x11, s[12])
+                .addTransit(0x22, s[1]);
         expected = new NFA(s[0], s[1]);
         Assertion.assertEquivalent(expected, nfa);
     }

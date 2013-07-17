@@ -148,8 +148,8 @@ public class RuleName implements Element {//, Nonterminal {
 //        System.out.println("Enter rule " + this.toString());
 //        RuleName.depth ++;
         if (null == rules.get(this.toString())) {
-            startState.addTransit(this.toString(), acceptingState);
-            return;
+//            startState.addTransit(this.toString(), acceptingState);
+            throw new IllegalAbnfException("Fail to find the definition of " + this.toString());
         }
 
         Rule rule = rules.get(this.toString());

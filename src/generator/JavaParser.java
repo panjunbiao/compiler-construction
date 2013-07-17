@@ -42,10 +42,10 @@ import abnf.RuleName;
 import abnf.AbnfParser;
 import analyzer.*;
 //import analyzer.RegularAnalyzer;
-import automata.DFA;
+//import automata.DFA;
 import automata.NFA;
 import automata.NFAState;
-import automata.NFAUtils;
+//import automata.NFAUtils;
 
 public class JavaParser {
     public boolean checkUndefinedSymbol(List<Rule> ruleList) {
@@ -160,9 +160,9 @@ public class JavaParser {
         System.out.println("Total states = " + nfa.getStateSet().size());
         nfa.getStartState().printToDot();
         System.out.println("NFA print completed.");
-        DFA dfa = nfa.toDFA();
-        dfa.getStart().mergeTransits();
-        dfa.getStart().printToDot();
+//        DFA dfa = nfa.toDFA();
+//        dfa.getStart().mergeTransits();
+//        dfa.getStart().printToDot();
 //        NFA nfa = javaParser.generateNFA("RFC3261-SIP-message", ruleList);
 //
 //        NFAUtils.genrateDFA(nfa.getStart());//.printToDot();

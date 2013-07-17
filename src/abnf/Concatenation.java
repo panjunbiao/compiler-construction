@@ -111,15 +111,12 @@ public class Concatenation implements Abnf {//implements DependenceAnalyzer {//i
     public void toNFA(NFAState startState, NFAState acceptingState, Map<String, Rule> rules) throws IllegalAbnfException{
         NFAState current = startState;
         NFAState next = null;
-        for(int index = 0; index < repetitions.size(); index ++) {
-            if (index < repetitions.size() - 1) {
-                next = new NFAState();
-                repetitions.get(index).toNFA(current, next, rules);
-                current = next;
-            } else {
-                repetitions.get(index).toNFA(current, acceptingState, rules);
-            }
+        for(int index = 0; index < repetitions.size() - 1; index ++) {
+            next = new NFAState();
+            repetitions.get(index).toNFA(current, next, rules);
+            current = next;
         }
+        repetitions.get(repetitions.size() - 1).toNFA(current, acceptingState, rules);
     }
 
 /*

@@ -58,48 +58,48 @@ public class RepetitionTest {
         nfa = tester.test(AbnfParserFactory.newInstance("*%x11"));
         Assertion.assertEquivalent(expected, nfa);
 
-        nfa = tester.test(AbnfParserFactory.newInstance("*ABC"));
+        nfa = tester.test(AbnfParserFactory.newInstance("*%x30"));
         s = NFAStateFactory.newInstances(2);
-        s[0].addTransit(s[1]).addTransit("ABC", s[1]);
+        s[0].addTransit(s[1]).addTransit(0x30, s[1]);
         expected = new NFA(s[0], s[1]);
         Assertion.assertEquivalent(expected, nfa);
 
-        nfa = tester.test(AbnfParserFactory.newInstance("*2ABC"));
+        nfa = tester.test(AbnfParserFactory.newInstance("*2%x30"));
         s = NFAStateFactory.newInstances(3);
         s[0]    .addTransit(s[1]);
-        s[0]    .addTransit("ABC", s[2])
+        s[0]    .addTransit(0x30, s[2])
                 .addTransit(s[1]);
-        s[2]    .addTransit("ABC", s[1]);
+        s[2]    .addTransit(0x30, s[1]);
         expected = new NFA(s[0], s[1]);
         Assertion.assertEquivalent(expected, nfa);
 
-        nfa = tester.test(AbnfParserFactory.newInstance("2*4ABC"));
+        nfa = tester.test(AbnfParserFactory.newInstance("2*4%x30"));
         s = NFAStateFactory.newInstances(5);
-        s[0]    .addTransit("ABC", s[2])
-                .addTransit("ABC", s[3])
+        s[0]    .addTransit(0x30, s[2])
+                .addTransit(0x30, s[3])
                 .addTransit(s[1]);
-        s[3]    .addTransit("ABC", s[4])
+        s[3]    .addTransit(0x30, s[4])
                 .addTransit(s[1]);
-        s[4]    .addTransit("ABC", s[1]);
+        s[4]    .addTransit(0x30, s[1]);
         expected = new NFA(s[0], s[1]);
         Assertion.assertEquivalent(expected, nfa);
 
-        nfa = tester.test(AbnfParserFactory.newInstance("2*2ABC"));
+        nfa = tester.test(AbnfParserFactory.newInstance("2*2%x30"));
         s = NFAStateFactory.newInstances(3);
-        s[0]    .addTransit("ABC", s[2])
-                .addTransit("ABC", s[1]);
+        s[0]    .addTransit(0x30, s[2])
+                .addTransit(0x30, s[1]);
         expected = new NFA(s[0], s[1]);
         Assertion.assertEquivalent(expected, nfa);
 
-        nfa = tester.test(AbnfParserFactory.newInstance("2*ABC"));
+        nfa = tester.test(AbnfParserFactory.newInstance("2*%x30"));
         s = NFAStateFactory.newInstances(3);
-        s[0]    .addTransit("ABC", s[2])
-                .addTransit("ABC", s[1])
-                .addTransit("ABC", s[1]);
+        s[0]    .addTransit(0x30, s[2])
+                .addTransit(0x30, s[1])
+                .addTransit(0x30, s[1]);
         expected = new NFA(s[0], s[1]);
         Assertion.assertEquivalent(expected, nfa);
 
-        nfa = tester.test(AbnfParserFactory.newInstance("*(A B)"));
+        nfa = tester.test(AbnfParserFactory.newInstance("*(%x30 %x31)"));
         nfa.getStartState().printToDot();
 
     }

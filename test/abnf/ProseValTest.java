@@ -5,7 +5,7 @@ import org.junit.Test;
 import automata.NFA;
 import automata.NFAState;
 import automata.NFAStateFactory;
-import automata.NFATransitType;
+//import automata.NFATransitType;
 
 import java.io.IOException;
 import java.util.HashMap;

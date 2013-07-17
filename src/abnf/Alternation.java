@@ -143,9 +143,8 @@ public class Alternation implements Abnf {//implements DependenceAnalyzer { //im
             return;
         }
 
-        Iterator<Concatenation> it = concatenations.iterator();
-        while (it.hasNext()) {
-            it.next().toNFA(startState, acceptingState, rules);
+        for(int index = 0; index < concatenations.size(); index ++) {
+            concatenations.get(index).toNFA(startState, acceptingState, rules);
         }
 	}
 

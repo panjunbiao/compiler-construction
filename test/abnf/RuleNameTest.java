@@ -33,13 +33,13 @@ public class RuleNameTest {
         NFA expected;
         NFAState[] s;
 
-        s = NFAStateFactory.newInstances(2);
-        s[0].addTransit("aBc123", s[1]);
-        expected = new NFA(s[0], s[1]);
-
-        System.out.println("====================");
-        nfa = tester.test(AbnfParserFactory.newInstance("aBc123"));
-        Assertion.assertEquivalent(expected, nfa);
+//        s = NFAStateFactory.newInstances(2);
+//        s[0].addTransit("aBc123", s[1]);
+//        expected = new NFA(s[0], s[1]);
+//
+//        System.out.println("====================");
+//        nfa = tester.test(AbnfParserFactory.newInstance("aBc123"));
+//        Assertion.assertEquivalent(expected, nfa);
 
         Tester<NFA> ruleListTester = new Tester<NFA>() {
             @Override

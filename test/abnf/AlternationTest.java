@@ -5,7 +5,7 @@ import org.junit.Test;
 import automata.NFA;
 import automata.NFAState;
 import automata.NFAStateFactory;
-import automata.NFATransitType;
+//import automata.NFATransitType;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -20,6 +20,8 @@ import java.util.HashMap;
  * To change this template use File | Settings | File Templates.
  */
 public class AlternationTest {
+    private static final char DQUOTE = '"';
+
     @Test
     public void testToNFA() throws Exception {
         Tester<NFA> tester = new Tester<NFA>() {
@@ -37,27 +39,26 @@ public class AlternationTest {
 
         nfa = tester.test(AbnfParserFactory.newInstance("%x11"));
         s = NFAStateFactory.newInstances(2);
-        s[0].addTransit((byte)0x11, s[1]);
+        s[0].addTransit(0x11, s[1]);
         expected = new NFA(s[0], s[1]);
         Assertion.assertEquivalent(expected, nfa);
 
-        nfa = tester.test(AbnfParserFactory.newInstance("%x11/\"1\""));
+        nfa = tester.test(AbnfParserFactory.newInstance("%x11/%x31"));
 
         s = NFAStateFactory.newInstances(2);
-        s[0]    .addTransit((byte)0x11, s[1]);
+        s[0]    .addTransit(0x11, s[1]);
         s[0]    .addTransit('1', s[1]);
         expected = new NFA(s[0], s[1]);
-
         Assertion.assertEquivalent(expected, nfa);
 
-        nfa = tester.test(AbnfParserFactory.newInstance("ABC/(B C)/[E F]"));
+        nfa = tester.test(AbnfParserFactory.newInstance("%x31/(%x32 %x33)/[%x34 %x35]"));
         s = NFAStateFactory.newInstances(12);
-        s[0]    .addTransit("ABC", s[1]);
-        s[0]    .addTransit("B", s[2])
-                .addTransit("C", s[1]);
+        s[0]    .addTransit('1', s[1]);
+        s[0]    .addTransit('2', s[2])
+                .addTransit('3', s[1]);
         s[0]    .addTransit(s[1]);
-        s[0]    .addTransit("E", s[4])
-                .addTransit("F", s[1]);
+        s[0]    .addTransit('4', s[4])
+                .addTransit('5', s[1]);
         expected = new NFA(s[0] ,s[1]);
         Assertion.assertEquivalent(expected, nfa);
     }

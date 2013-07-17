@@ -1,11 +1,12 @@
 package abnf;
 
+import automata.NFAStateFactory;
 import junit.framework.Assert;
 import org.junit.Test;
 import abnf.*;
 import automata.NFA;
 import automata.NFAState;
-import automata.NFATransitType;
+//import automata.NFATransitType;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -32,60 +33,36 @@ public class NumValTest {
 
         NFA nfa;
         NFAState state;
+        NFA expected;
+        NFAState[] s;
 
         nfa = tester.test(AbnfParserFactory.newInstance("%x00.11.eE.Ff"));
 
-        state = nfa.getStartState();
-        Assert.assertEquals(1, state.getTransits().size());
-        Assert.assertEquals(NFATransitType.BYTE, state.getTransits().get(0).getTransitType());
-        Assert.assertEquals((byte)0x00, state.getTransits().get(0).getInput());
+        nfa.getStartState().printToDot();
 
-        state = state.getTransits().get(0).getNext();
-        Assert.assertEquals(1, state.getTransits().size());
-        Assert.assertEquals(NFATransitType.BYTE, state.getTransits().get(0).getTransitType());
-        Assert.assertEquals((byte)0x11, state.getTransits().get(0).getInput());
-
-        state = state.getTransits().get(0).getNext();
-        Assert.assertEquals(1, state.getTransits().size());
-        Assert.assertEquals(NFATransitType.BYTE, state.getTransits().get(0).getTransitType());
-        Assert.assertEquals((byte)0xee, state.getTransits().get(0).getInput());
-
-        state = state.getTransits().get(0).getNext();
-        Assert.assertEquals(1, state.getTransits().size());
-        Assert.assertEquals(NFATransitType.BYTE, state.getTransits().get(0).getTransitType());
-        Assert.assertEquals(0xff, state.getTransits().get(0).getInput());
-
-        state = state.getTransits().get(0).getNext();
-        Assert.assertTrue(nfa.getAcceptingStates().contains(state));
+        s = NFAStateFactory.newInstances(5);
+        s[0].addTransit(0x00, s[2])
+            .addTransit(0x11, s[3])
+            .addTransit(0xee, s[4])
+            .addTransit(0xff, s[1]);
+        expected = new NFA(s[0], s[1]);
+        Assertion.assertEquivalent(expected, nfa);
 
         nfa = tester.test(AbnfParserFactory.newInstance("%d56"));
+        nfa.getStartState().printToDot();
 
-        state = nfa.getStartState();
-        Assert.assertEquals(1, state.getTransits().size());
-        Assert.assertEquals(NFATransitType.BYTE, state.getTransits().get(0).getTransitType());
-        Assert.assertEquals(56, state.getTransits().get(0).getInput());
-
-        state = state.getTransits().get(0).getNext();
-        Assert.assertTrue(nfa.getAcceptingStates().contains(state));
+        s = NFAStateFactory.newInstances(2);
+        s[0].addTransit(56, s[1]);
+        expected = new NFA(s[0], s[1]);
+        Assertion.assertEquivalent(expected, nfa);
 
         nfa = tester.test(AbnfParserFactory.newInstance("%b00.11.1111"));
-
-        state = nfa.getStartState();
-        Assert.assertEquals(1, state.getTransits().size());
-        Assert.assertEquals(NFATransitType.BYTE, state.getTransits().get(0).getTransitType());
-        Assert.assertEquals((byte)0x00, state.getTransits().get(0).getInput());
-
-        state = state.getTransits().get(0).getNext();
-        Assert.assertEquals(1, state.getTransits().size());
-        Assert.assertEquals(NFATransitType.BYTE, state.getTransits().get(0).getTransitType());
-        Assert.assertEquals(0x03, state.getTransits().get(0).getInput());
-
-        state = state.getTransits().get(0).getNext();
-        Assert.assertEquals(1, state.getTransits().size());
-        Assert.assertEquals(NFATransitType.BYTE, state.getTransits().get(0).getTransitType());
-        Assert.assertEquals(0x0f, state.getTransits().get(0).getInput());
-
-        state = state.getTransits().get(0).getNext();
-        Assert.assertTrue(nfa.getAcceptingStates().contains(state));
+        nfa.getStartState().printToDot();
+        s = NFAStateFactory.newInstances(4);
+        s[0].addTransit(0x00, s[2])
+                .addTransit(0x03, s[3])
+                .addTransit(0x0f, s[1]);
+        expected = new NFA(s[0], s[1]);
+        Assertion.assertEquivalent(expected, nfa);
     }
 }

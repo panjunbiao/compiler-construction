@@ -33,8 +33,8 @@ public class OptionTest {
 
         s = NFAStateFactory.newInstances(2);
         s[0].addTransit(s[1]);
-        s[0].addTransit((byte)0x11, s[1]);
-        s[0].addTransit((byte)0x22, s[1]);
+        s[0].addTransit(0x11, s[1]);
+        s[0].addTransit(0x22, s[1]);
         expected = new NFA(s[0], s[1]);
 
         System.out.println("====================");
