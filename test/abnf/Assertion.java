@@ -40,7 +40,7 @@ import abnf.*;
 
 public class Assertion {
     public static void assertMatch(String input, Tester tester, Object expectedOutput, int expectedPos, int expectedLine) throws MatchException, IOException, CollisionException, IllegalAbnfException {
-        AbnfParser parser = AbnfParserFactory.newInstance(input);
+        AbnfParser parser = AbnfParser.newInstance(input);
         Object output = tester.test(parser);
         if (output == null && expectedOutput != null) Assert.fail();
         if (output != null && expectedOutput == null) Assert.fail();
@@ -50,14 +50,14 @@ public class Assertion {
     }
 
     public static void assertMatch(String input, Tester tester, int expectedPos, int expectedLine) throws MatchException, IOException, CollisionException, IllegalAbnfException {
-        AbnfParser parser = AbnfParserFactory.newInstance(input);
+        AbnfParser parser = AbnfParser.newInstance(input);
         tester.test(parser);
         Assert.assertEquals(expectedPos, parser.getInputStream().getPos());
         Assert.assertEquals(expectedLine, parser.getInputStream().getLine());
     }
 
     public static void assertMatchException(String input, Tester tester, int expectedPos, int expectedLine) {
-        AbnfParser parser = AbnfParserFactory.newInstance(input);
+        AbnfParser parser = AbnfParser.newInstance(input);
         try {
             tester.test(parser);
             Assert.fail();
@@ -74,7 +74,7 @@ public class Assertion {
     }
 
     public static void assertCollisionException(String input, Tester tester, int expectedPos, int expectedLine) {
-        AbnfParser parser = AbnfParserFactory.newInstance(input);
+        AbnfParser parser = AbnfParser.newInstance(input);
         try {
             tester.test(parser);
             Assert.fail();

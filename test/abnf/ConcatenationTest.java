@@ -3,7 +3,6 @@ package abnf;
 import org.junit.Test;
 import automata.NFA;
 import automata.NFAState;
-import automata.NFAStateFactory;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -31,15 +30,15 @@ public class ConcatenationTest {
         NFA expected;
         NFAState[] s;
 
-        nfa = tester.test(AbnfParserFactory.newInstance("%x11 \"1\" \"J\""));
-        s = NFAStateFactory.newInstances(5);
+        nfa = tester.test(AbnfParser.newInstance("%x11 \"1\" \"J\""));
+        s = NFAState.newInstances(5);
         s[0].addTransit((byte)0x11, s[3]).addTransit('1', s[4]).addTransit('J', s[1]);
         expected = new NFA(s[0], s[1]);
         Assertion.assertEquivalent(expected, nfa);
 
-        nfa = tester.test(AbnfParserFactory.newInstance("%x30 [%x31 %x32] (%x33/%x34) *%x35 1*3%x36 2*%x37 %x11.22"));
+        nfa = tester.test(AbnfParser.newInstance("%x30 [%x31 %x32] (%x33/%x34) *%x35 1*3%x36 2*%x37 %x11.22"));
         nfa.getStartState().printToDot();
-        s = NFAStateFactory.newInstances(13);
+        s = NFAState.newInstances(13);
         s[0]    .addTransit('0', s[2])
                 .addTransit(s[3]);
         s[2]    .addTransit('1', s[4])

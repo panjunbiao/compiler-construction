@@ -68,29 +68,29 @@ public class AbnfParserTest {
         input = "a=b" + (char)0x0d + (char)0x0a;
         rulesInput += input;
         List<Rule> rules = new ArrayList<Rule>();
-        rules.add(AbnfParserFactory.newInstance(input).rule());
+        rules.add(AbnfParser.newInstance(input).rule());
         input = "b=*c" + (char)0x0d + (char)0x0a;
         rulesInput += input;
-        rules.add(AbnfParserFactory.newInstance(input).rule());
+        rules.add(AbnfParser.newInstance(input).rule());
         input = "c=[d]" + (char)0x0d + (char)0x0a;
         rulesInput += input;
-        rules.add(AbnfParserFactory.newInstance(input).rule());
+        rules.add(AbnfParser.newInstance(input).rule());
         input = "d=a/b/c/e" + (char)0x0d + (char)0x0a;
         rulesInput += input;
-        rules.add(AbnfParserFactory.newInstance(input).rule());
+        rules.add(AbnfParser.newInstance(input).rule());
         input = "e=f/(g h)" + (char)0x0d + (char)0x0a;
         rulesInput += input;
-        rules.add(AbnfParserFactory.newInstance(input).rule());
+        rules.add(AbnfParser.newInstance(input).rule());
         input = "g=i [j]" + (char)0x0d + (char)0x0a;
         rulesInput += input;
-        rules.add(AbnfParserFactory.newInstance(input).rule());
+        rules.add(AbnfParser.newInstance(input).rule());
         input = "j=<abcd#1234>" + (char)0x0d + (char)0x0a;
         rulesInput += input;
-        rules.add(AbnfParserFactory.newInstance(input).rule());
+        rules.add(AbnfParser.newInstance(input).rule());
         input = "j=/\"abcd#1234\"" + (char)0x0d + (char)0x0a;
         rulesInput += input;
-        rules.add(AbnfParserFactory.newInstance(input).rule());
-        Assertion.assertMatch(rulesInput, tester, AbnfParserFactory.newInstance(rulesInput).rulelist(), 1, 9);
+        rules.add(AbnfParser.newInstance(input).rule());
+        Assertion.assertMatch(rulesInput, tester, AbnfParser.newInstance(rulesInput).rulelist(), 1, 9);
 
     }
 
@@ -106,23 +106,23 @@ public class AbnfParserTest {
 
         String input;
         Elements elements;
-        elements = AbnfParserFactory.newInstance("b").elements();
+        elements = AbnfParser.newInstance("b").elements();
         Assertion.assertMatch("a=b" + (char)0x0D + (char)0x0A, tester, new Rule(new RuleName("a"), "=", elements), 1, 2);
         Assertion.assertMatch("a=/b" + (char)0x0D + (char)0x0A, tester, new Rule(new RuleName("a"), "=/", elements), 1, 2);
 
-        elements = AbnfParserFactory.newInstance("b/c").elements();
+        elements = AbnfParser.newInstance("b/c").elements();
         Assertion.assertMatch("a=b/c" + (char)0x0D + (char)0x0A, tester, new Rule(new RuleName("a"), "=", elements), 1, 2);
         Assertion.assertMatch("a=/b/c" + (char)0x0D + (char)0x0A, tester, new Rule(new RuleName("a"), "=/", elements), 1, 2);
 
-        elements = AbnfParserFactory.newInstance("b c d").elements();
+        elements = AbnfParser.newInstance("b c d").elements();
         Assertion.assertMatch("a=b c d" + (char)0x0D + (char)0x0A, tester, new Rule(new RuleName("a"), "=", elements), 1, 2);
         Assertion.assertMatch("a=/b c d" + (char)0x0D + (char)0x0A, tester, new Rule(new RuleName("a"), "=/", elements), 1, 2);
 
-        elements = AbnfParserFactory.newInstance("[b]").elements();
+        elements = AbnfParser.newInstance("[b]").elements();
         Assertion.assertMatch("a=[b]" + (char)0x0D + (char)0x0A, tester, new Rule(new RuleName("a"), "=", elements), 1, 2);
         Assertion.assertMatch("a=/[b]" + (char)0x0D + (char)0x0A, tester, new Rule(new RuleName("a"), "=/", elements), 1, 2);
 
-        elements = AbnfParserFactory.newInstance("*b").elements();
+        elements = AbnfParser.newInstance("*b").elements();
         Assertion.assertMatch("a=*b" + (char)0x0D + (char)0x0A, tester, new Rule(new RuleName("a"), "=", elements), 1, 2);
         Assertion.assertMatch("a=/*b" + (char)0x0D + (char)0x0A, tester, new Rule(new RuleName("a"), "=/", elements), 1, 2);
     }
@@ -136,23 +136,23 @@ public class AbnfParserTest {
             }
         };
 
-        Assert.assertEquals("A", AbnfParserFactory.newInstance("A").rulename().toString());
-        Assert.assertEquals("a", AbnfParserFactory.newInstance("a").rulename().toString());
-        Assert.assertEquals("Z", AbnfParserFactory.newInstance("Z").rulename().toString());
-        Assert.assertEquals("z", AbnfParserFactory.newInstance("z").rulename().toString());
-        Assert.assertEquals("ABCDEFGHIJKLMNOPQRSTUVWXYZ", AbnfParserFactory.newInstance("ABCDEFGHIJKLMNOPQRSTUVWXYZ").rulename().toString());
-        Assert.assertEquals("abcdefghijklmnopqrstuvwxyz", AbnfParserFactory.newInstance("abcdefghijklmnopqrstuvwxyz").rulename().toString());
-        Assert.assertEquals("AbCdEfGhIjKlMnOpQrStUvWxYz", AbnfParserFactory.newInstance("AbCdEfGhIjKlMnOpQrStUvWxYz").rulename().toString());
-        Assert.assertEquals("aBcDeFgHiJkLmNoPqRsTuVwXyZ", AbnfParserFactory.newInstance("aBcDeFgHiJkLmNoPqRsTuVwXyZ").rulename().toString());
-        Assert.assertEquals("A1234567890Z", AbnfParserFactory.newInstance("A1234567890Z").rulename().toString());
-        Assert.assertEquals("a1234567890z", AbnfParserFactory.newInstance("a1234567890z").rulename().toString());
-        Assert.assertEquals("A1B2C3D4e5f6g7h8i9j0", AbnfParserFactory.newInstance("A1B2C3D4e5f6g7h8i9j0").rulename().toString());
-        Assert.assertEquals("A1B2C3D4e5f6g7h8i9j0aBcDeFgHiJkLmNoPqRsTuVwXyZAbCdEfGhIjKlMnOpQrStUvWxYz", AbnfParserFactory.newInstance("A1B2C3D4e5f6g7h8i9j0aBcDeFgHiJkLmNoPqRsTuVwXyZAbCdEfGhIjKlMnOpQrStUvWxYz").rulename().toString());
-        Assert.assertEquals("A1b2C3-4d-", AbnfParserFactory.newInstance("A1b2C3-4d-").rulename().toString());
-        Assert.assertEquals("a-------------", AbnfParserFactory.newInstance("a-------------").rulename().toString());
-        Assert.assertEquals("A1b2C3-4d-", AbnfParserFactory.newInstance("A1b2C3-4d-#").rulename().toString());
-        Assert.assertEquals("A1b2C3-4d-", AbnfParserFactory.newInstance("A1b2C3-4d-..").rulename().toString());
-        Assert.assertEquals("RFC3261-A1b2C3-4d-", AbnfParserFactory.newInstance("RFC3261-", "A1b2C3-4d-*&^").rulename().toString());
+        Assert.assertEquals("A", AbnfParser.newInstance("A").rulename().toString());
+        Assert.assertEquals("a", AbnfParser.newInstance("a").rulename().toString());
+        Assert.assertEquals("Z", AbnfParser.newInstance("Z").rulename().toString());
+        Assert.assertEquals("z", AbnfParser.newInstance("z").rulename().toString());
+        Assert.assertEquals("ABCDEFGHIJKLMNOPQRSTUVWXYZ", AbnfParser.newInstance("ABCDEFGHIJKLMNOPQRSTUVWXYZ").rulename().toString());
+        Assert.assertEquals("abcdefghijklmnopqrstuvwxyz", AbnfParser.newInstance("abcdefghijklmnopqrstuvwxyz").rulename().toString());
+        Assert.assertEquals("AbCdEfGhIjKlMnOpQrStUvWxYz", AbnfParser.newInstance("AbCdEfGhIjKlMnOpQrStUvWxYz").rulename().toString());
+        Assert.assertEquals("aBcDeFgHiJkLmNoPqRsTuVwXyZ", AbnfParser.newInstance("aBcDeFgHiJkLmNoPqRsTuVwXyZ").rulename().toString());
+        Assert.assertEquals("A1234567890Z", AbnfParser.newInstance("A1234567890Z").rulename().toString());
+        Assert.assertEquals("a1234567890z", AbnfParser.newInstance("a1234567890z").rulename().toString());
+        Assert.assertEquals("A1B2C3D4e5f6g7h8i9j0", AbnfParser.newInstance("A1B2C3D4e5f6g7h8i9j0").rulename().toString());
+        Assert.assertEquals("A1B2C3D4e5f6g7h8i9j0aBcDeFgHiJkLmNoPqRsTuVwXyZAbCdEfGhIjKlMnOpQrStUvWxYz", AbnfParser.newInstance("A1B2C3D4e5f6g7h8i9j0aBcDeFgHiJkLmNoPqRsTuVwXyZAbCdEfGhIjKlMnOpQrStUvWxYz").rulename().toString());
+        Assert.assertEquals("A1b2C3-4d-", AbnfParser.newInstance("A1b2C3-4d-").rulename().toString());
+        Assert.assertEquals("a-------------", AbnfParser.newInstance("a-------------").rulename().toString());
+        Assert.assertEquals("A1b2C3-4d-", AbnfParser.newInstance("A1b2C3-4d-#").rulename().toString());
+        Assert.assertEquals("A1b2C3-4d-", AbnfParser.newInstance("A1b2C3-4d-..").rulename().toString());
+        Assert.assertEquals("RFC3261-A1b2C3-4d-", AbnfParser.newInstance("RFC3261-", "A1b2C3-4d-*&^").rulename().toString());
         Assertion.assertMatchException("1", tester, 1, 1);
         Assertion.assertMatchException("1234567890", tester, 1, 1);
         Assertion.assertMatchException("-", tester, 1, 1);
@@ -274,7 +274,7 @@ public class AbnfParserTest {
 
         String input;
         input = "A/B/C";
-        Assertion.assertMatch(input, tester, AbnfParserFactory.newInstance(input).elements(), 6, 1);
+        Assertion.assertMatch(input, tester, AbnfParser.newInstance(input).elements(), 6, 1);
 
 //        TODO
         input = "A/B/C  ";
@@ -292,8 +292,8 @@ public class AbnfParserTest {
             }
         };
 
-        Assert.assertEquals(String.valueOf((char)0x09), AbnfParserFactory.newInstance(new char[] {0x09}).HTAB());
-        Assert.assertEquals(String.valueOf((char) 0x09), AbnfParserFactory.newInstance(new char[]{0x09, 0x09}).HTAB());
+        Assert.assertEquals(String.valueOf((char)0x09), AbnfParser.newInstance(new char[] {0x09}).HTAB());
+        Assert.assertEquals(String.valueOf((char) 0x09), AbnfParser.newInstance(new char[]{0x09, 0x09}).HTAB());
         Assertion.assertMatchException("" + (char) 0x0D, tester, 1, 1);
         Assertion.assertMatchException("", tester, 1, 1);
 
@@ -308,8 +308,8 @@ public class AbnfParserTest {
                 return parser.LF();
             }
         };
-        Assert.assertEquals(String.valueOf((char)0x0A), AbnfParserFactory.newInstance(new char[] {0x0A}).LF());
-        Assert.assertEquals(String.valueOf((char) 0x0A), AbnfParserFactory.newInstance(new char[]{0x0A, 0x0A}).LF());
+        Assert.assertEquals(String.valueOf((char)0x0A), AbnfParser.newInstance(new char[] {0x0A}).LF());
+        Assert.assertEquals(String.valueOf((char) 0x0A), AbnfParser.newInstance(new char[]{0x0A, 0x0A}).LF());
         Assertion.assertMatchException("", tester, 1, 1);
         Assertion.assertMatchException("" + (char)0x0D, tester, 1, 1);
     }
@@ -323,7 +323,7 @@ public class AbnfParserTest {
                 return parser.SP();
             }
         };
-        Assert.assertEquals(String.valueOf((char)0x20), AbnfParserFactory.newInstance(new char[] {0x20, 0x20}).SP());
+        Assert.assertEquals(String.valueOf((char)0x20), AbnfParser.newInstance(new char[] {0x20, 0x20}).SP());
 
         Assertion.assertMatchException("", tester, 1, 1);
         Assertion.assertMatchException("" + (char)0x0D, tester, 1, 1);
@@ -339,13 +339,13 @@ public class AbnfParserTest {
                 return parser.WSP();
             }
         };
-        Assert.assertEquals(String.valueOf((char)0x09), AbnfParserFactory.newInstance(new char[] {0x09}).WSP());
-        Assert.assertEquals(String.valueOf((char)0x20), AbnfParserFactory.newInstance(new char[] {0x20}).WSP());
-        Assert.assertEquals(String.valueOf((char)0x09), AbnfParserFactory.newInstance(new char[] {0x09, 0x09}).WSP());
-        Assert.assertEquals(String.valueOf((char)0x09), AbnfParserFactory.newInstance(new char[] {0x09, 0x20}).WSP());
-        Assert.assertEquals(String.valueOf((char)0x20), AbnfParserFactory.newInstance(new char[] {0x20, 0x20}).WSP());
-        Assert.assertEquals(String.valueOf((char)0x20), AbnfParserFactory.newInstance(new char[] {0x20, 0x09}).WSP());
-        Assert.assertEquals(String.valueOf((char)0x20), AbnfParserFactory.newInstance(new char[] {0x20, 0x30}).WSP());
+        Assert.assertEquals(String.valueOf((char)0x09), AbnfParser.newInstance(new char[] {0x09}).WSP());
+        Assert.assertEquals(String.valueOf((char)0x20), AbnfParser.newInstance(new char[] {0x20}).WSP());
+        Assert.assertEquals(String.valueOf((char)0x09), AbnfParser.newInstance(new char[] {0x09, 0x09}).WSP());
+        Assert.assertEquals(String.valueOf((char)0x09), AbnfParser.newInstance(new char[] {0x09, 0x20}).WSP());
+        Assert.assertEquals(String.valueOf((char)0x20), AbnfParser.newInstance(new char[] {0x20, 0x20}).WSP());
+        Assert.assertEquals(String.valueOf((char)0x20), AbnfParser.newInstance(new char[] {0x20, 0x09}).WSP());
+        Assert.assertEquals(String.valueOf((char)0x20), AbnfParser.newInstance(new char[] {0x20, 0x30}).WSP());
         Assertion.assertMatchException("", tester, 1, 1);
         Assertion.assertMatchException("" + (char)0x08, tester, 1, 1);
     }
@@ -359,7 +359,7 @@ public class AbnfParserTest {
                 return parser.CR();
             }
         };
-        Assert.assertEquals(String.valueOf((char) 0x0D), AbnfParserFactory.newInstance(new char[]{0x0D, 0x0D}).CR());
+        Assert.assertEquals(String.valueOf((char) 0x0D), AbnfParser.newInstance(new char[]{0x0D, 0x0D}).CR());
         Assertion.assertMatchException("", tester, 1, 1);
         Assertion.assertMatchException("" + (char)0x0A, tester, 1, 1);
     }
@@ -373,10 +373,10 @@ public class AbnfParserTest {
                 return parser.CRLF();
             }
         };
-        Assert.assertEquals(String.valueOf((char)0x0D) + String.valueOf((char)0x0A), AbnfParserFactory.newInstance(new char[] {0x0D, 0x0A}).CRLF());
-        Assert.assertEquals(String.valueOf((char)0x0D) + String.valueOf((char)0x0A), AbnfParserFactory.newInstance(new char[] {0x0D, 0x0A, 0x0C}).CRLF());
-        Assert.assertEquals(String.valueOf((char)0x0D) + String.valueOf((char)0x0A), AbnfParserFactory.newInstance(new char[] {0x0D, 0x0A, 0x0D}).CRLF());
-        Assert.assertEquals(String.valueOf((char)0x0D) + String.valueOf((char)0x0A), AbnfParserFactory.newInstance(new char[] {0x0D, 0x0A, 0x0A}).CRLF());
+        Assert.assertEquals(String.valueOf((char)0x0D) + String.valueOf((char)0x0A), AbnfParser.newInstance(new char[] {0x0D, 0x0A}).CRLF());
+        Assert.assertEquals(String.valueOf((char)0x0D) + String.valueOf((char)0x0A), AbnfParser.newInstance(new char[] {0x0D, 0x0A, 0x0C}).CRLF());
+        Assert.assertEquals(String.valueOf((char)0x0D) + String.valueOf((char)0x0A), AbnfParser.newInstance(new char[] {0x0D, 0x0A, 0x0D}).CRLF());
+        Assert.assertEquals(String.valueOf((char)0x0D) + String.valueOf((char)0x0A), AbnfParser.newInstance(new char[] {0x0D, 0x0A, 0x0A}).CRLF());
         Assertion.assertMatchException("", tester, 1, 1);
         Assertion.assertMatchException("" + (char)0x0D, tester, 1, 1);
         Assertion.assertMatchException("" + (char)0x0A, tester, 1, 1);
@@ -434,10 +434,10 @@ public class AbnfParserTest {
             }
         };
 
-        Assert.assertEquals(String.valueOf((char)0x21), AbnfParserFactory.newInstance(new char[] {0x21}).VCHAR());
-        Assert.assertEquals(String.valueOf((char)0x22), AbnfParserFactory.newInstance(new char[] {0x22}).VCHAR());
-        Assert.assertEquals(String.valueOf((char)0x7E), AbnfParserFactory.newInstance(new char[] {0x7E}).VCHAR());
-        Assert.assertEquals("B", AbnfParserFactory.newInstance("B").VCHAR());
+        Assert.assertEquals(String.valueOf((char)0x21), AbnfParser.newInstance(new char[] {0x21}).VCHAR());
+        Assert.assertEquals(String.valueOf((char)0x22), AbnfParser.newInstance(new char[] {0x22}).VCHAR());
+        Assert.assertEquals(String.valueOf((char)0x7E), AbnfParser.newInstance(new char[] {0x7E}).VCHAR());
+        Assert.assertEquals("B", AbnfParser.newInstance("B").VCHAR());
         Assertion.assertMatchException("", tester, 1, 1);
         Assertion.assertMatchException(" ", tester, 1, 1);
         Assertion.assertMatchException("" + (char)0x7F, tester, 1, 1);
@@ -475,46 +475,46 @@ public class AbnfParserTest {
         String input;
         input = "A B C %xff \"abc\" <12-34>";
         alternation = new Alternation();
-        alternation.addConcatenation(AbnfParserFactory.newInstance(input).concatenation());
-        alternation.addConcatenation(AbnfParserFactory.newInstance(input).concatenation());
+        alternation.addConcatenation(AbnfParser.newInstance(input).concatenation());
+        alternation.addConcatenation(AbnfParser.newInstance(input).concatenation());
         Assertion.assertMatch(input + "/" + input, tester, alternation, 50, 1);
 
         input = "A";
         alternation = new Alternation();
-        alternation.addConcatenation(AbnfParserFactory.newInstance(input).concatenation());
-        alternation.addConcatenation(AbnfParserFactory.newInstance(input).concatenation());
+        alternation.addConcatenation(AbnfParser.newInstance(input).concatenation());
+        alternation.addConcatenation(AbnfParser.newInstance(input).concatenation());
         Assertion.assertMatch(input + "/" + input, tester, alternation, 4, 1);
 
         input = "A";
         alternation = new Alternation();
-        alternation.addConcatenation(AbnfParserFactory.newInstance(input).concatenation());
-        alternation.addConcatenation(AbnfParserFactory.newInstance(input).concatenation());
+        alternation.addConcatenation(AbnfParser.newInstance(input).concatenation());
+        alternation.addConcatenation(AbnfParser.newInstance(input).concatenation());
 //        TODO
 //        Does not support currently
         Assertion.assertMatchException(input + " / " + input, tester, 3, 1);
 
         input = "(A B C D E)";
         alternation = new Alternation();
-        alternation.addConcatenation(AbnfParserFactory.newInstance(input).concatenation());
-        alternation.addConcatenation(AbnfParserFactory.newInstance(input).concatenation());
+        alternation.addConcatenation(AbnfParser.newInstance(input).concatenation());
+        alternation.addConcatenation(AbnfParser.newInstance(input).concatenation());
         Assertion.assertMatch(input + "/" + input, tester, alternation, 24, 1);
 
         input = "[A B C D E]";
         alternation = new Alternation();
-        alternation.addConcatenation(AbnfParserFactory.newInstance(input).concatenation());
-        alternation.addConcatenation(AbnfParserFactory.newInstance(input).concatenation());
+        alternation.addConcatenation(AbnfParser.newInstance(input).concatenation());
+        alternation.addConcatenation(AbnfParser.newInstance(input).concatenation());
         Assertion.assertMatch(input + "/" + input, tester, alternation, 24, 1);
 
         input = "*(A B C)";
         alternation = new Alternation();
-        alternation.addConcatenation(AbnfParserFactory.newInstance(input).concatenation());
-        alternation.addConcatenation(AbnfParserFactory.newInstance(input).concatenation());
+        alternation.addConcatenation(AbnfParser.newInstance(input).concatenation());
+        alternation.addConcatenation(AbnfParser.newInstance(input).concatenation());
         Assertion.assertMatch(input + "/" + input, tester, alternation, 18, 1);
 
         input = "1*2(A B C)";
         alternation = new Alternation();
-        alternation.addConcatenation(AbnfParserFactory.newInstance(input).concatenation());
-        alternation.addConcatenation(AbnfParserFactory.newInstance(input).concatenation());
+        alternation.addConcatenation(AbnfParser.newInstance(input).concatenation());
+        alternation.addConcatenation(AbnfParser.newInstance(input).concatenation());
         Assertion.assertMatch(input + "/" + input, tester, alternation, 22, 1);
 
     }
@@ -531,9 +531,9 @@ public class AbnfParserTest {
 
         String input;
         input = "a b c *a 1*b 1*2c *3d %d88 %x11.22.33 %b00-1111 *(aa bb) *2[a b c] 5*(a/b)";
-        Assertion.assertMatch(input, tester, AbnfParserFactory.newInstance(input).concatenation(), 75, 1);
+        Assertion.assertMatch(input, tester, AbnfParser.newInstance(input).concatenation(), 75, 1);
         input = "a b  c  d    e";
-        Assertion.assertMatch(input, tester, AbnfParserFactory.newInstance(input).concatenation(), 15, 1);
+        Assertion.assertMatch(input, tester, AbnfParser.newInstance(input).concatenation(), 15, 1);
 
 //        TODO
 //        Does not support currently
@@ -577,7 +577,7 @@ public class AbnfParserTest {
                 3, 1);
 
 
-        Option option = AbnfParserFactory.newInstance("[B]").option();
+        Option option = AbnfParser.newInstance("[B]").option();
 
         Assertion.assertMatch(
                 "[B]", tester,
@@ -603,7 +603,7 @@ public class AbnfParserTest {
                 5, 1);
 
 
-        Group group = AbnfParserFactory.newInstance("(B)").group();
+        Group group = AbnfParser.newInstance("(B)").group();
 
         Assertion.assertMatch(
                 "(B)", tester,
@@ -629,7 +629,7 @@ public class AbnfParserTest {
                 5, 1);
 
 
-        CharVal charVal = AbnfParserFactory.newInstance("\"ABC\"").char_val();
+        CharVal charVal = AbnfParser.newInstance("\"ABC\"").char_val();
 
         Assertion.assertMatch(
                 "\"ABC\"", tester,
@@ -655,7 +655,7 @@ public class AbnfParserTest {
                 7, 1);
 
 
-        Element numVal = AbnfParserFactory.newInstance("%x00-FF").num_val();
+        Element numVal = AbnfParser.newInstance("%x00-FF").num_val();
 
         Assertion.assertMatch(
                 "%x00-FF", tester,
@@ -680,7 +680,7 @@ public class AbnfParserTest {
                 new Repetition(new Repeat(0, 0), numVal),
                 9, 1);
 
-        ProseVal proseVal = AbnfParserFactory.newInstance("<ABC>").prose_val();
+        ProseVal proseVal = AbnfParser.newInstance("<ABC>").prose_val();
 
         Assertion.assertMatch(
                 "<ABC>", tester,
@@ -729,20 +729,20 @@ public class AbnfParserTest {
         };
 
         String input;
-        Assert.assertEquals(new Repeat(0,0), AbnfParserFactory.newInstance("*").repeat());
-        Assert.assertEquals(new Repeat(0,0), AbnfParserFactory.newInstance("**").repeat());
-        Assert.assertEquals(new Repeat(0,0), AbnfParserFactory.newInstance("*C").repeat());
-        Assert.assertEquals(new Repeat(1,1), AbnfParserFactory.newInstance("1").repeat());
-        Assert.assertEquals(new Repeat(1,1), AbnfParserFactory.newInstance("1M").repeat());
-        Assert.assertEquals(new Repeat(2,0), AbnfParserFactory.newInstance("2*").repeat());
-        Assert.assertEquals(new Repeat(2,0), AbnfParserFactory.newInstance("2*_").repeat());
-        Assert.assertEquals(new Repeat(0,3), AbnfParserFactory.newInstance("*3").repeat());
-        Assert.assertEquals(new Repeat(0,3), AbnfParserFactory.newInstance("*3").repeat());
-        Assert.assertEquals(new Repeat(0,3), AbnfParserFactory.newInstance("*3J").repeat());
-        Assert.assertEquals(new Repeat(4,9), AbnfParserFactory.newInstance("4*9").repeat());
-        Assert.assertEquals(new Repeat(4,9), AbnfParserFactory.newInstance("4*9#").repeat());
-        Assert.assertEquals(new Repeat(5,0), AbnfParserFactory.newInstance("5**").repeat());
-        Assert.assertEquals(new Repeat(6, 0), AbnfParserFactory.newInstance("6*B").repeat());
+        Assert.assertEquals(new Repeat(0,0), AbnfParser.newInstance("*").repeat());
+        Assert.assertEquals(new Repeat(0,0), AbnfParser.newInstance("**").repeat());
+        Assert.assertEquals(new Repeat(0,0), AbnfParser.newInstance("*C").repeat());
+        Assert.assertEquals(new Repeat(1,1), AbnfParser.newInstance("1").repeat());
+        Assert.assertEquals(new Repeat(1,1), AbnfParser.newInstance("1M").repeat());
+        Assert.assertEquals(new Repeat(2,0), AbnfParser.newInstance("2*").repeat());
+        Assert.assertEquals(new Repeat(2,0), AbnfParser.newInstance("2*_").repeat());
+        Assert.assertEquals(new Repeat(0,3), AbnfParser.newInstance("*3").repeat());
+        Assert.assertEquals(new Repeat(0,3), AbnfParser.newInstance("*3").repeat());
+        Assert.assertEquals(new Repeat(0,3), AbnfParser.newInstance("*3J").repeat());
+        Assert.assertEquals(new Repeat(4,9), AbnfParser.newInstance("4*9").repeat());
+        Assert.assertEquals(new Repeat(4,9), AbnfParser.newInstance("4*9#").repeat());
+        Assert.assertEquals(new Repeat(5,0), AbnfParser.newInstance("5**").repeat());
+        Assert.assertEquals(new Repeat(6, 0), AbnfParser.newInstance("6*B").repeat());
         Assertion.assertMatchException("", tester, 1, 1);
         Assertion.assertMatchException("#", tester, 1, 1);
     }
@@ -760,27 +760,27 @@ public class AbnfParserTest {
 
         String input;
         input = "aBcD1234";
-        RuleName ruleName = AbnfParserFactory.newInstance(input).rulename();
+        RuleName ruleName = AbnfParser.newInstance(input).rulename();
         Assertion.assertMatch(input, tester, ruleName, 9, 1);
 
         input = "(aBcD1234/%d88)";
-        Group group = AbnfParserFactory.newInstance(input).group();
+        Group group = AbnfParser.newInstance(input).group();
         Assertion.assertMatch(input, tester, group, 16, 1);
 
         input = "[aBcD1234/%d88]";
-        Option option = AbnfParserFactory.newInstance(input).option();
+        Option option = AbnfParser.newInstance(input).option();
         Assertion.assertMatch(input, tester, option, 16, 1);
 
         input = "\"#$%^\"";
-        CharVal charVal = AbnfParserFactory.newInstance(input).char_val();
+        CharVal charVal = AbnfParser.newInstance(input).char_val();
         Assertion.assertMatch(input, tester, charVal, 7, 1);
 
         input = "%b0101.1010.1111";
-        Element numVal = AbnfParserFactory.newInstance(input).num_val();
+        Element numVal = AbnfParser.newInstance(input).num_val();
         Assertion.assertMatch(input, tester, numVal, 17, 1);
 
         input = "<aBcD1234/%d88>";
-        ProseVal proseVal = AbnfParserFactory.newInstance(input).prose_val();
+        ProseVal proseVal = AbnfParser.newInstance(input).prose_val();
         Assertion.assertMatch(input, tester, proseVal, 16, 1);
 
     }
@@ -794,7 +794,7 @@ public class AbnfParserTest {
                 return parser.group();
             }
         };
-        Alternation alternation = AbnfParserFactory.newInstance("A/B").alternation();
+        Alternation alternation = AbnfParser.newInstance("A/B").alternation();
         Assertion.assertMatch("(A/B)", tester, new Group(alternation), 6, 1);
 //        TODO
 //        Does not support this case
@@ -810,7 +810,7 @@ public class AbnfParserTest {
                 return parser.option();
             }
         };
-        Alternation alternation = AbnfParserFactory.newInstance("A/B").alternation();
+        Alternation alternation = AbnfParser.newInstance("A/B").alternation();
         Assertion.assertMatch("[A/B]", tester, new Option(alternation), 6, 1);
 //        TODO
 //        Does not support this case
@@ -830,27 +830,27 @@ public class AbnfParserTest {
         };
         String input;
         input = "";
-        Assert.assertEquals(input, AbnfParserFactory.newInstance("\"" + input + "\"").char_val().getValue());
+        Assert.assertEquals(input, AbnfParser.newInstance("\"" + input + "\"").char_val().getValue());
         input = String.valueOf((char)0x20);
-        Assert.assertEquals(input, AbnfParserFactory.newInstance("\"" + input + "\"").char_val().getValue());
+        Assert.assertEquals(input, AbnfParser.newInstance("\"" + input + "\"").char_val().getValue());
         input = String.valueOf((char)0x21);
-        Assert.assertEquals(input, AbnfParserFactory.newInstance("\"" + input + "\"").char_val().getValue());
+        Assert.assertEquals(input, AbnfParser.newInstance("\"" + input + "\"").char_val().getValue());
         input = String.valueOf((char)0x23);
-        Assert.assertEquals(input, AbnfParserFactory.newInstance("\"" + input + "\"").char_val().getValue());
+        Assert.assertEquals(input, AbnfParser.newInstance("\"" + input + "\"").char_val().getValue());
         input = String.valueOf((char)0x7E);
-        Assert.assertEquals(input, AbnfParserFactory.newInstance("\"" + input + "\"").char_val().getValue());
+        Assert.assertEquals(input, AbnfParser.newInstance("\"" + input + "\"").char_val().getValue());
         input = String.valueOf((char)0x20) + String.valueOf((char)0x20);
-        Assert.assertEquals(input, AbnfParserFactory.newInstance("\"" + input + "\"").char_val().getValue());
+        Assert.assertEquals(input, AbnfParser.newInstance("\"" + input + "\"").char_val().getValue());
         input = String.valueOf((char)0x21) + String.valueOf((char)0x21);
-        Assert.assertEquals(input, AbnfParserFactory.newInstance("\"" + input + "\"").char_val().getValue());
+        Assert.assertEquals(input, AbnfParser.newInstance("\"" + input + "\"").char_val().getValue());
         input = String.valueOf((char)0x23) + String.valueOf((char)0x23);
-        Assert.assertEquals(input, AbnfParserFactory.newInstance("\"" + input + "\"").char_val().getValue());
+        Assert.assertEquals(input, AbnfParser.newInstance("\"" + input + "\"").char_val().getValue());
         input = String.valueOf((char)0x7E) + String.valueOf((char)0x7E);
-        Assert.assertEquals(input, AbnfParserFactory.newInstance("\"" + input + "\"").char_val().getValue());
+        Assert.assertEquals(input, AbnfParser.newInstance("\"" + input + "\"").char_val().getValue());
         input = "AbCd1234#$%^~!@#$%^&*()`-=_+[]\\{}|,./<>?;:'";
-        Assert.assertEquals(input, AbnfParserFactory.newInstance("\"" + input + "\"").char_val().getValue());
-        Assert.assertEquals(input, AbnfParserFactory.newInstance("\"" + input + "\"A").char_val().getValue());
-        Assert.assertEquals(input, AbnfParserFactory.newInstance("\"" + input + "\"\"").char_val().getValue());
+        Assert.assertEquals(input, AbnfParser.newInstance("\"" + input + "\"").char_val().getValue());
+        Assert.assertEquals(input, AbnfParser.newInstance("\"" + input + "\"A").char_val().getValue());
+        Assert.assertEquals(input, AbnfParser.newInstance("\"" + input + "\"\"").char_val().getValue());
 
         Assertion.assertMatchException("", tester, 1, 1);
         Assertion.assertMatchException("" + (char)0x19, tester, 1, 1);
@@ -873,25 +873,25 @@ public class AbnfParserTest {
         };
         String input;
         input = "b1";
-        Assert.assertEquals("%" + input, AbnfParserFactory.newInstance(input).bin_val().toString());
+        Assert.assertEquals("%" + input, AbnfParser.newInstance(input).bin_val().toString());
         input = "b1010";
-        Assert.assertEquals("%" + input, AbnfParserFactory.newInstance(input).bin_val().toString());
+        Assert.assertEquals("%" + input, AbnfParser.newInstance(input).bin_val().toString());
         input = "B1";
-        Assert.assertEquals("%" + input, AbnfParserFactory.newInstance(input).bin_val().toString());
+        Assert.assertEquals("%" + input, AbnfParser.newInstance(input).bin_val().toString());
         input = "b1.1";
-        Assert.assertEquals("%" + input, AbnfParserFactory.newInstance(input).bin_val().toString());
+        Assert.assertEquals("%" + input, AbnfParser.newInstance(input).bin_val().toString());
         input = "b0101.1111";
-        Assert.assertEquals("%" + input, AbnfParserFactory.newInstance(input).bin_val().toString());
+        Assert.assertEquals("%" + input, AbnfParser.newInstance(input).bin_val().toString());
         input = "b0000-1111";
-        Assert.assertEquals("%" + input, AbnfParserFactory.newInstance(input).bin_val().toString());
-        Assert.assertEquals("%" + input, AbnfParserFactory.newInstance(input+".00").bin_val().toString());
-        Assert.assertEquals("%" + input, AbnfParserFactory.newInstance(input+"-1234").bin_val().toString());
+        Assert.assertEquals("%" + input, AbnfParser.newInstance(input).bin_val().toString());
+        Assert.assertEquals("%" + input, AbnfParser.newInstance(input+".00").bin_val().toString());
+        Assert.assertEquals("%" + input, AbnfParser.newInstance(input+"-1234").bin_val().toString());
         input = "b00.11.00.01.10.00.11.00.11";
-        Assert.assertEquals("%" + input, AbnfParserFactory.newInstance(input).bin_val().toString());
-        Assert.assertEquals("%" + input, AbnfParserFactory.newInstance(input+".").bin_val().toString());
-        Assert.assertEquals("%" + input, AbnfParserFactory.newInstance(input+"..").bin_val().toString());
-        Assert.assertEquals("%" + input, AbnfParserFactory.newInstance(input+".bb").bin_val().toString());
-        Assert.assertEquals("%" + input, AbnfParserFactory.newInstance(input+"-00").bin_val().toString());
+        Assert.assertEquals("%" + input, AbnfParser.newInstance(input).bin_val().toString());
+        Assert.assertEquals("%" + input, AbnfParser.newInstance(input+".").bin_val().toString());
+        Assert.assertEquals("%" + input, AbnfParser.newInstance(input+"..").bin_val().toString());
+        Assert.assertEquals("%" + input, AbnfParser.newInstance(input+".bb").bin_val().toString());
+        Assert.assertEquals("%" + input, AbnfParser.newInstance(input+"-00").bin_val().toString());
 
         Assertion.assertMatchException("", tester, 1, 1);
         Assertion.assertMatchException("b", tester, 2,1);
@@ -913,25 +913,25 @@ public class AbnfParserTest {
 
         String input;
         input = "d1";
-        Assert.assertEquals("%" + input, AbnfParserFactory.newInstance(input).dec_val().toString());
+        Assert.assertEquals("%" + input, AbnfParser.newInstance(input).dec_val().toString());
         input = "d1234";
-        Assert.assertEquals("%" + input, AbnfParserFactory.newInstance(input).dec_val().toString());
+        Assert.assertEquals("%" + input, AbnfParser.newInstance(input).dec_val().toString());
         input = "D1";
-        Assert.assertEquals("%" + input, AbnfParserFactory.newInstance(input).dec_val().toString());
+        Assert.assertEquals("%" + input, AbnfParser.newInstance(input).dec_val().toString());
         input = "d1.2";
-        Assert.assertEquals("%" + input, AbnfParserFactory.newInstance(input).dec_val().toString());
+        Assert.assertEquals("%" + input, AbnfParser.newInstance(input).dec_val().toString());
         input = "d1234.5678";
-        Assert.assertEquals("%" + input, AbnfParserFactory.newInstance(input).dec_val().toString());
+        Assert.assertEquals("%" + input, AbnfParser.newInstance(input).dec_val().toString());
         input = "d1234-5678";
-        Assert.assertEquals("%" + input, AbnfParserFactory.newInstance(input).dec_val().toString());
-        Assert.assertEquals("%" + input, AbnfParserFactory.newInstance(input+".00").dec_val().toString());
-        Assert.assertEquals("%" + input, AbnfParserFactory.newInstance(input+"-1234").dec_val().toString());
+        Assert.assertEquals("%" + input, AbnfParser.newInstance(input).dec_val().toString());
+        Assert.assertEquals("%" + input, AbnfParser.newInstance(input+".00").dec_val().toString());
+        Assert.assertEquals("%" + input, AbnfParser.newInstance(input+"-1234").dec_val().toString());
         input = "d12.34.56.78.9";
-        Assert.assertEquals("%" + input, AbnfParserFactory.newInstance(input + "a.bc.de.f0").dec_val().toString());
-        Assert.assertEquals("%" + input, AbnfParserFactory.newInstance(input+".").dec_val().toString());
-        Assert.assertEquals("%" + input, AbnfParserFactory.newInstance(input+"..").dec_val().toString());
-        Assert.assertEquals("%" + input, AbnfParserFactory.newInstance(input+".##").dec_val().toString());
-        Assert.assertEquals("%" + input, AbnfParserFactory.newInstance(input+"-00").dec_val().toString());
+        Assert.assertEquals("%" + input, AbnfParser.newInstance(input + "a.bc.de.f0").dec_val().toString());
+        Assert.assertEquals("%" + input, AbnfParser.newInstance(input+".").dec_val().toString());
+        Assert.assertEquals("%" + input, AbnfParser.newInstance(input+"..").dec_val().toString());
+        Assert.assertEquals("%" + input, AbnfParser.newInstance(input+".##").dec_val().toString());
+        Assert.assertEquals("%" + input, AbnfParser.newInstance(input+"-00").dec_val().toString());
 
         Assertion.assertMatchException("", tester, 1, 1);
         Assertion.assertMatchException("d", tester, 2, 1);
@@ -953,27 +953,27 @@ public class AbnfParserTest {
 
         String input;
         input = "x1";
-        Assert.assertEquals("%" + input, AbnfParserFactory.newInstance(input).hex_val().toString());
+        Assert.assertEquals("%" + input, AbnfParser.newInstance(input).hex_val().toString());
         input = "x1234";
-        Assert.assertEquals("%" + input, AbnfParserFactory.newInstance(input).hex_val().toString());
+        Assert.assertEquals("%" + input, AbnfParser.newInstance(input).hex_val().toString());
         input = "X1";
-        Assert.assertEquals("%" + input, AbnfParserFactory.newInstance(input).hex_val().toString());
+        Assert.assertEquals("%" + input, AbnfParser.newInstance(input).hex_val().toString());
         input = "x1.2";
-        Assert.assertEquals("%" + input, AbnfParserFactory.newInstance(input).hex_val().toString());
+        Assert.assertEquals("%" + input, AbnfParser.newInstance(input).hex_val().toString());
         input = "x1234.5678";
-        Assert.assertEquals("%" + input, AbnfParserFactory.newInstance(input).hex_val().toString());
+        Assert.assertEquals("%" + input, AbnfParser.newInstance(input).hex_val().toString());
         input = "xabcd.ef";
-        Assert.assertEquals("%" + input, AbnfParserFactory.newInstance(input).hex_val().toString());
+        Assert.assertEquals("%" + input, AbnfParser.newInstance(input).hex_val().toString());
         input = "xA1.2B";
-        Assert.assertEquals("%" + input, AbnfParserFactory.newInstance(input).hex_val().toString());
+        Assert.assertEquals("%" + input, AbnfParser.newInstance(input).hex_val().toString());
         input = "x1234-abCD";
-        Assert.assertEquals("%" + input, AbnfParserFactory.newInstance(input).hex_val().toString());
-        Assert.assertEquals("%" + input, AbnfParserFactory.newInstance(input+"-").hex_val().toString());
+        Assert.assertEquals("%" + input, AbnfParser.newInstance(input).hex_val().toString());
+        Assert.assertEquals("%" + input, AbnfParser.newInstance(input+"-").hex_val().toString());
         input = "x12.34.56.78.9a.bc.de.f0";
-        Assert.assertEquals("%" + input, AbnfParserFactory.newInstance(input).hex_val().toString());
-        Assert.assertEquals("%" + input, AbnfParserFactory.newInstance(input + ".").hex_val().toString());
-        Assert.assertEquals("%" + input, AbnfParserFactory.newInstance(input + ".g0").hex_val().toString());
-        Assert.assertEquals("%" + input, AbnfParserFactory.newInstance(input + "-00").hex_val().toString());
+        Assert.assertEquals("%" + input, AbnfParser.newInstance(input).hex_val().toString());
+        Assert.assertEquals("%" + input, AbnfParser.newInstance(input + ".").hex_val().toString());
+        Assert.assertEquals("%" + input, AbnfParser.newInstance(input + ".g0").hex_val().toString());
+        Assert.assertEquals("%" + input, AbnfParser.newInstance(input + "-00").hex_val().toString());
 
         Assertion.assertMatchException("", tester, 1, 1);
         Assertion.assertMatchException("x", tester, 2, 1);
@@ -988,23 +988,23 @@ public class AbnfParserTest {
     public void testNum_val() throws Exception {
         String input;
         input = "%b0101";
-        Assert.assertEquals(input, AbnfParserFactory.newInstance(input).num_val().toString());
+        Assert.assertEquals(input, AbnfParser.newInstance(input).num_val().toString());
         input = "%b0101.1010.1111";
-        Assert.assertEquals(input, AbnfParserFactory.newInstance(input).num_val().toString());
+        Assert.assertEquals(input, AbnfParser.newInstance(input).num_val().toString());
         input = "%b0101-1111";
-        Assert.assertEquals(input, AbnfParserFactory.newInstance(input).num_val().toString());
+        Assert.assertEquals(input, AbnfParser.newInstance(input).num_val().toString());
         input = "%d1234";
-        Assert.assertEquals(input, AbnfParserFactory.newInstance(input).num_val().toString());
+        Assert.assertEquals(input, AbnfParser.newInstance(input).num_val().toString());
         input = "%d0123.4567.8901";
-        Assert.assertEquals(input, AbnfParserFactory.newInstance(input).num_val().toString());
+        Assert.assertEquals(input, AbnfParser.newInstance(input).num_val().toString());
         input = "%d12345-67890";
-        Assert.assertEquals(input, AbnfParserFactory.newInstance(input).num_val().toString());
+        Assert.assertEquals(input, AbnfParser.newInstance(input).num_val().toString());
         input = "%x0123";
-        Assert.assertEquals(input, AbnfParserFactory.newInstance(input).num_val().toString());
+        Assert.assertEquals(input, AbnfParser.newInstance(input).num_val().toString());
         input = "%x0123.4567.89ab.CDEF";
-        Assert.assertEquals(input, AbnfParserFactory.newInstance(input).num_val().toString());
+        Assert.assertEquals(input, AbnfParser.newInstance(input).num_val().toString());
         input = "%x0123456789-ABCDEFabcdef09";
-        Assert.assertEquals(input, AbnfParserFactory.newInstance(input).num_val().toString());
+        Assert.assertEquals(input, AbnfParser.newInstance(input).num_val().toString());
     }
 
     //		        prose-val      =  "<" *(%x20-3D / %x3F-7E) ">"
@@ -1018,18 +1018,18 @@ public class AbnfParserTest {
         };
         String input;
         input = String.valueOf(new char[] {'<', '>'});
-        Assert.assertEquals(input, AbnfParserFactory.newInstance(input).prose_val().toString());
+        Assert.assertEquals(input, AbnfParser.newInstance(input).prose_val().toString());
         input = String.valueOf(new char[] {'<', 0x20, '>'});
-        Assert.assertEquals(input, AbnfParserFactory.newInstance(input).prose_val().toString());
+        Assert.assertEquals(input, AbnfParser.newInstance(input).prose_val().toString());
         input = String.valueOf(new char[] {'<', 0x3D, '>'});
-        Assert.assertEquals(input, AbnfParserFactory.newInstance(input).prose_val().toString());
+        Assert.assertEquals(input, AbnfParser.newInstance(input).prose_val().toString());
         input = String.valueOf(new char[] {'<', 0x3F, '>'});
-        Assert.assertEquals(input, AbnfParserFactory.newInstance(input).prose_val().toString());
+        Assert.assertEquals(input, AbnfParser.newInstance(input).prose_val().toString());
         input = String.valueOf(new char[] {'<', 0x7E, '>'});
-        Assert.assertEquals(input, AbnfParserFactory.newInstance(input).prose_val().toString());
+        Assert.assertEquals(input, AbnfParser.newInstance(input).prose_val().toString());
         input = String.valueOf(new char[] {'<', 0x20, 0x3D, 0x3F, 0x7E, '>'});
-        Assert.assertEquals(input, AbnfParserFactory.newInstance(input).prose_val().toString());
-        Assert.assertEquals("<>", AbnfParserFactory.newInstance("<>>").prose_val().toString());
+        Assert.assertEquals(input, AbnfParser.newInstance(input).prose_val().toString());
+        Assert.assertEquals("<>", AbnfParser.newInstance("<>>").prose_val().toString());
         Assertion.assertMatchException("<" + (char) 0x19 + ">", tester, 2, 1);
         Assertion.assertMatchException("<" + (char) 0x7F + ">", tester, 2, 1);
         Assertion.assertMatchException("<" + (char)0x20 + (char)0x19 + ">", tester, 3, 1);
@@ -1049,7 +1049,7 @@ public class AbnfParserTest {
                 "a=/*c/1*d/*2e/3*8f/[a b c]/(a b [%xff])" + (char)0x0d + (char)0x0a;
         input2= "a=b/*c/1*d/*2e/3*8f/[a b c]/(a b [%xff])" + (char)0x0d + (char)0x0a;
 
-        Assertion.assertMatch(input1, tester, AbnfParserFactory.newInstance(input2).rulelist(), 1, 3);
+        Assertion.assertMatch(input1, tester, AbnfParser.newInstance(input2).rulelist(), 1, 3);
 
         input1= "a=b" + (char)0x0d + (char)0x0a +
                 "a=*c/1*d/*2e/3*8f/[a b c]/(a b [%xff])" + (char)0x0d + (char)0x0a;

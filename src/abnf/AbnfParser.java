@@ -19,6 +19,7 @@
  */
 
 package abnf;
+import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.io.BufferedInputStream;
 import java.io.IOException;
@@ -562,4 +563,18 @@ public class AbnfParser {
 		this.prefix = prefix;
         this.is = new PeekableInputStream(inputStream);
 	}
+
+    public static AbnfParser newInstance(String prefix, String input) {
+        return new AbnfParser(prefix, new ByteArrayInputStream(input.getBytes()));
+    }
+    public static AbnfParser newInstance(String input) {
+        return new AbnfParser("", new ByteArrayInputStream(input.getBytes()));
+    }
+    public static AbnfParser newInstance(String prefix, char[] input) {
+        return new AbnfParser(prefix, new ByteArrayInputStream(String.valueOf(input).getBytes()));
+    }
+    public static AbnfParser newInstance(char[] input) {
+        return new AbnfParser("", new ByteArrayInputStream(String.valueOf(input).getBytes()));
+    }
+
 }

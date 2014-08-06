@@ -59,8 +59,8 @@ public class ProseVal implements Element {//, Terminal {
 //		return true;
 //	}
     @Override
-    public Set<RuleName> getDependentRuleNames() {
-        return new HashSet<RuleName>();
+    public Set<String> getDependentRuleNames() {
+        return new HashSet<String>();
     }
 //	@Override
 //	public Set<Terminal> getFirstTerminalSet() {

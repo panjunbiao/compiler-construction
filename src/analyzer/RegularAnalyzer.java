@@ -36,11 +36,11 @@ public class RegularAnalyzer {
 	private List<Rule> regularRules = new ArrayList<Rule>();
 	public List<Rule> getRegularRules() { return regularRules; }
 
-    private List<Rule> undefinedRules = new ArrayList<Rule>();
-    public List<Rule> getUndefinedRules() { return undefinedRules; }
+//    private List<Rule> undefinedRules = new ArrayList<Rule>();
+//    public List<Rule> getUndefinedRules() { return undefinedRules; }
 
 	public RegularAnalyzer(List<Rule> rules) {
-		Set<RuleName> definedRuleNames = new HashSet<RuleName>();
+		Set<String> definedRuleNames = new HashSet<String>();
         List<Rule> observedRules = new ArrayList<Rule>();
         observedRules.addAll(rules);
 
@@ -48,29 +48,29 @@ public class RegularAnalyzer {
 		do {
 			foundRegular = false;
 			for(int index = observedRules.size() - 1; index >= 0; index --) {
-                Set<RuleName> dependent = observedRules.get(index).getElements().getDependentRuleNames();
+                Set<String> dependent = observedRules.get(index).getElements().getDependentRuleNames();
                 if (definedRuleNames.containsAll(dependent)) {
-                    definedRuleNames.add(observedRules.get(index).getRuleName());
+                    definedRuleNames.add(observedRules.get(index).getRuleName().toString());
                     regularRules.add(observedRules.get(index));
                     observedRules.remove(index);
                     foundRegular = true;
                     continue;
                 }
 
-                if (!dependent.contains(observedRules.get(index).getRuleName())) {
-                    continue;
-                }
+//                if (!dependent.contains(observedRules.get(index).getRuleName().toString())) {
+//                    continue;
+//                }
 
-                dependent.remove(observedRules.get(index).getRuleName());
-                if (definedRuleNames.containsAll(dependent)) {
-                    definedRuleNames.add(observedRules.get(index).getRuleName());
-                    nonRegularRules.add(observedRules.get(index));
-                    observedRules.remove(index);
-                    foundRegular = true;
-                }
+//                dependent.remove(observedRules.get(index).getRuleName());
+//                if (definedRuleNames.containsAll(dependent)) {
+//                    definedRuleNames.add(observedRules.get(index).getRuleName().toString());
+//                    nonRegularRules.add(observedRules.get(index));
+//                    observedRules.remove(index);
+//                    foundRegular = true;
+//                }
 			}
 		} while (foundRegular);
-        undefinedRules.addAll(observedRules);
+//        undefinedRules.addAll(observedRules);
         observedRules.clear();
 	}
 }

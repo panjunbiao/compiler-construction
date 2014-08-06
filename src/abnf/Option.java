@@ -65,7 +65,7 @@ public class Option implements Element {//, Operation {
 //		return alternation.canBeDefinedBy(rulenames);
 //	}
     @Override
-	public Set<RuleName> getDependentRuleNames() {
+	public Set<String> getDependentRuleNames() {
         return alternation.getDependentRuleNames();
 	}
 //	@Override

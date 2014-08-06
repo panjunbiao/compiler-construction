@@ -3,7 +3,6 @@ package abnf;
 import org.junit.Test;
 import automata.NFA;
 import automata.NFAState;
-import automata.NFAStateFactory;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -31,14 +30,14 @@ public class GroupTest {
         NFA expected;
         NFAState[] s;
 
-        s = NFAStateFactory.newInstances(2);
+        s = NFAState.newInstances(2);
         s[0].addTransit(s[1]);
         s[0].addTransit(0x11, s[1]);
         s[0].addTransit(0x22, s[1]);
         expected = new NFA(s[0], s[1]);
 
         System.out.println("====================");
-        nfa = tester.test(AbnfParserFactory.newInstance("([%x11/%x22])"));
+        nfa = tester.test(AbnfParser.newInstance("([%x11/%x22])"));
         Assertion.assertEquivalent(expected, nfa);
     }
 }

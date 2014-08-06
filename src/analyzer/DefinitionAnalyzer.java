@@ -37,21 +37,21 @@ import abnf.Rule;
  */
 
 public class DefinitionAnalyzer {
-    private Set<RuleName> definedRuleNames = new HashSet<RuleName>();
-    public Set<RuleName> getDefinedRuleNames() { return definedRuleNames; }
+    private Set<String> definedRuleNames = new HashSet<String>();
+    public Set<String> getDefinedRuleNames() { return definedRuleNames; }
 
-    private Set<RuleName> undefinedRuleNames = new HashSet<RuleName>();
-    public Set<RuleName> getUndefinedRuleNames() { return undefinedRuleNames; }
+    private Set<String> undefinedRuleNames = new HashSet<String>();
+    public Set<String> getUndefinedRuleNames() { return undefinedRuleNames; }
 
     public DefinitionAnalyzer(List<Rule> ruleList) {
         for(int index = 0; index < ruleList.size(); index ++) {
-            definedRuleNames.add(ruleList.get(index).getRuleName());
+            definedRuleNames.add(ruleList.get(index).getRuleName().toString());
         }
         for(int index = 0; index < ruleList.size(); index ++) {
-            Set<RuleName> dependent = ruleList.get(index).getElements().getDependentRuleNames();
-            Iterator<RuleName> it = dependent.iterator();
+            Set<String> dependent = ruleList.get(index).getElements().getDependentRuleNames();
+            Iterator<String> it = dependent.iterator();
             while (it.hasNext()) {
-                RuleName rulename = it.next();
+                String rulename = it.next();
                 if (!definedRuleNames.contains(rulename)) {
                     undefinedRuleNames.add(rulename);
                 }

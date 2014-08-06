@@ -87,7 +87,7 @@ public class Repetition implements Abnf {//implements DependenceAnalyzer {//impl
 //		}
 //	}
     @Override
-    public Set<RuleName> getDependentRuleNames() {
+    public Set<String> getDependentRuleNames() {
         return element.getDependentRuleNames();
     }
 //    @Override

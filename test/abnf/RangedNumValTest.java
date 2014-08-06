@@ -1,7 +1,5 @@
 package abnf;
 
-import automata.NFAStateFactory;
-import junit.framework.Assert;
 import org.junit.Test;
 import automata.NFA;
 import automata.NFAState;
@@ -10,8 +8,6 @@ import automata.NFAState;
 
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Set;
 
 /**
  * Created with IntelliJ IDEA.
@@ -38,10 +34,10 @@ public class RangedNumValTest {
         NFA expected;
         NFAState[] s;
 
-        nfa = tester.test(AbnfParserFactory.newInstance("%x80-ff"));
+        nfa = tester.test(AbnfParser.newInstance("%x80-ff"));
 
 
-        s = NFAStateFactory.newInstances(2);
+        s = NFAState.newInstances(2);
         for(int input = 0x80; input <= 0xff; input ++) s[0].addTransit(input, s[1]);
         expected = new NFA(s[0], s[1]);
         Assertion.assertEquivalent(expected, nfa);

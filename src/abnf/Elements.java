@@ -49,7 +49,7 @@ public class Elements implements Abnf {//implements DependenceAnalyzer {// imple
 //		return alternation.canBeDefinedBy(rulenames);
 //	}
     @Override
-    public Set<RuleName> getDependentRuleNames() {
+    public Set<String> getDependentRuleNames() {
         return alternation.getDependentRuleNames();
 	}
 	/*

@@ -52,7 +52,7 @@ public class Alternation implements Abnf {//implements DependenceAnalyzer { //im
 		String str = "";
         Iterator<Concatenation> it = concatenations.iterator();
         while (it.hasNext()) {
-            if (!"".equals(str)) str += " / ";
+            if (!"".equals(str)) str += "/";
             str += it.next().toString();
         }
 		return str;
@@ -68,8 +68,8 @@ public class Alternation implements Abnf {//implements DependenceAnalyzer { //im
 //		return result;
 //	}
     @Override
-    public Set<RuleName> getDependentRuleNames() {
-        Set<RuleName> ruleNames = new HashSet<RuleName>();
+    public Set<String> getDependentRuleNames() {
+        Set<String> ruleNames = new HashSet<String>();
         Iterator<Concatenation> it = concatenations.iterator();
         while (it.hasNext()) {
             ruleNames.addAll(it.next().getDependentRuleNames());
@@ -147,10 +147,5 @@ public class Alternation implements Abnf {//implements DependenceAnalyzer { //im
             concatenations.get(index).toNFA(startState, acceptingState, rules);
         }
 	}
-
-//    @Override
-//    public NFA toNFA(Map<String, Rule> rules) throws IllegalAbnfException {
-//        return this.toNFA(new NFAState(), new NFAState(), rules);
-//    }
 
 }

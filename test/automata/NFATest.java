@@ -52,86 +52,92 @@ public class NFATest {
 
     @Test
     public void testToDFA() throws Exception {
-//        NFA nfa;
-//        NFAState[] s;
-//
-//        s = NFAStateFactory.newInstances(4);
-//        s[0].addTransit(s[0]);
-//        s[0].addTransit(s[1]);
-//
-//        s[1].addTransit(s[0]);
-//        s[1].addTransit(s[1]);
-//        s[1].addTransit(s[2]);
-//
-//        s[2].addTransit(s[0]);
-//        s[2].addTransit(s[1]);
-//        s[2].addTransit(s[2]);
-//        s[2].addTransit(s[3]);
-//
-//        s[3].addTransit(s[0]);
-//        s[3].addTransit(s[1]);
-//        s[3].addTransit(s[2]);
-//        s[3].addTransit(s[3]);
-//
-//        nfa = new NFA(s[0], s[3]);
-//
-//        DFA dfa = nfa.toDFA();
-//
-//        dfa.getStart().printToDot();
-//        System.out.println(dfa.getStateSet().size());
-//
-//        s = NFAStateFactory.newInstances(2);
-//        s[0].addTransit(1, s[1]);
-//        nfa = new NFA(s[0], s[1]);
-//        dfa = nfa.toDFA();
-//        dfa.setName("TestCase 0002");
-//        dfa.printToDot();
-//
-//        s = NFAStateFactory.newInstances(2);
-//        s[0].addTransit(s[1]);
-//        s[0].addTransit(1, s[1]);
-//        nfa = new NFA(s[0], s[1]);
-//        dfa = nfa.toDFA();
-//        dfa.setName("TestCase 0003");
-//        dfa.printToDot();
-//
-//        s = NFAStateFactory.newInstances(2);
-//        s[0].addTransit(1, s[1]);
-//        s[1].addTransit(2, s[1]);
-//        nfa = new NFA(s[0], s[1]);
-//        dfa = nfa.toDFA();
-//        dfa.setName("TestCase 0004");
-//        dfa.printToDot();
-//
-//        s = NFAStateFactory.newInstances(2);
-//        s[0].addTransit(1, s[0]);
-//        s[0].addTransit(2, s[1]);
-//        s[1].addTransit(3, s[1]);
-//        nfa = new NFA(s[0], s[1]);
-//        dfa = nfa.toDFA();
-//        dfa.setName("TestCase 0005");
-//        dfa.printToDot();
-//
-//        s = NFAStateFactory.newInstances(2);
-//        s[0].addTransit(s[1]);
-//        s[0].addTransit(1, s[0]);
-//        s[0].addTransit(2, s[1]);
-//        s[1].addTransit(3, s[1]);
-//        nfa = new NFA(s[0], s[1]);
-//        dfa = nfa.toDFA();
-//        dfa.setName("TestCase 0005");
-//        dfa.printToDot();
-//
-//        s = NFAStateFactory.newInstances(2);
-//        s[0].addTransit(s[1]);
-//        s[0].addTransit(1, s[0]);
-//        s[0].addTransit(2, s[1]);
-//        s[1].addTransit(3, s[1]);
-//        s[1].addTransit(s[0]);
-//        nfa = new NFA(s[0], s[1]);
-//        dfa = nfa.toDFA();
-//        dfa.setName("TestCase 0005");
-//        dfa.printToDot();
+        NFA nfa;
+        NFAState[] s;
+
+        s = NFAState.newInstances(4);
+        s[0].addTransit(s[0]);
+        s[0].addTransit(s[1]);
+
+        s[1].addTransit(s[0]);
+        s[1].addTransit(s[1]);
+        s[1].addTransit(s[2]);
+
+        s[2].addTransit(s[0]);
+        s[2].addTransit(s[1]);
+        s[2].addTransit(s[2]);
+        s[2].addTransit(s[3]);
+
+        s[3].addTransit(s[0]);
+        s[3].addTransit(s[1]);
+        s[3].addTransit(s[2]);
+        s[3].addTransit(s[3]);
+
+        nfa = new NFA(s[0], s[3]);
+        System.out.println("==========NFA=============");
+        nfa.getStartState().printToDot();
+
+        DFA dfa = nfa.toDFA();
+
+        System.out.println("==========DFA=============");
+        dfa.getStart().printToDot();
+        System.out.println(dfa.getStateSet().size());
+
+        s = NFAState.newInstances(2);
+        s[0].addTransit(1, s[1]);
+        nfa = new NFA(s[0], s[1]);
+        dfa = nfa.toDFA();
+        dfa.setName("TestCase 0002");
+        dfa.printToDot();
+
+        s = NFAState.newInstances(2);
+        s[0].addTransit(s[1]);
+        s[0].addTransit(1, s[1]);
+        nfa = new NFA(s[0], s[1]);
+        dfa = nfa.toDFA();
+        dfa.setName("TestCase 0003");
+        dfa.printToDot();
+
+        s = NFAState.newInstances(2);
+        s[0].addTransit(1, s[1]);
+        s[1].addTransit(2, s[1]);
+        nfa = new NFA(s[0], s[1]);
+        dfa = nfa.toDFA();
+        dfa.setName("TestCase 0004");
+        dfa.printToDot();
+
+        s = NFAState.newInstances(2);
+        s[0].addTransit(1, s[0]);
+        s[0].addTransit(2, s[1]);
+        s[1].addTransit(3, s[1]);
+        nfa = new NFA(s[0], s[1]);
+        dfa = nfa.toDFA();
+        dfa.setName("TestCase 0005");
+        dfa.printToDot();
+
+        s = NFAState.newInstances(2);
+        s[0].addTransit(s[1]);
+        s[0].addTransit(1, s[0]);
+        s[0].addTransit(2, s[1]);
+        s[1].addTransit(3, s[1]);
+        nfa = new NFA(s[0], s[1]);
+        dfa = nfa.toDFA();
+        dfa.setName("TestCase 0005");
+        dfa.printToDot();
+
+        s = NFAState.newInstances(2);
+        s[0].addTransit(s[1]);
+        s[0].addTransit(1, s[0]);
+        s[0].addTransit(2, s[1]);
+        s[1].addTransit(3, s[1]);
+        s[1].addTransit(s[0]);
+        nfa = new NFA(s[0], s[1]);
+        dfa = nfa.toDFA();
+        dfa.setName("TestCase 0005");
+        System.out.println("==========NFA=============");
+        nfa.getStartState().printToDot();
+        System.out.println("==========DFA=============");
+        dfa.printToDot();
 
     }
 }

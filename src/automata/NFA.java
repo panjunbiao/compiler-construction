@@ -30,6 +30,7 @@ import abnf.Repeat;
 import abnf.Repetition;
 import abnf.Rule;
 import abnf.RuleName;
+import junit.framework.Assert;
 //import analyzer.RegularAnalyzer;
 
 public class NFA {
@@ -48,45 +49,6 @@ public class NFA {
         this.acceptingStates.add(state);
     }
 
-//    public void merge(NFA nfa) {
-//        if (nfa.acceptingStates.contains(nfa.startState)) {
-//            this.acceptingStates.add(this.startState);
-//        }
-//
-//        this.startState.getNFATransits().addAll(nfa.getStartState().getNFATransits());
-//
-//        Iterator<NFATransit> it = nfa.getAcceptingTransits().iterator();
-//        while (it.hasNext()) {
-//
-//        }
-//        acceptingStates.addAll(nfa.getAcceptingStates());
-//    }
-
-//    public void checkAcceptingTransits(NFAState currentState,
-//                                     Set<NFAState> checkedStates,
-//                                     Set<NFATransit> acceptingTransits) {
-//        if (checkedStates.contains(currentState)) return;
-//        List<NFATransit> transits = currentState.getNFATransits();
-//        for(int index = 0; index < transits.size(); index ++) {
-//            checkedStates.add(currentState);
-//            if (acceptingStates.contains(transits.get(index).getNext())) acceptingTransits.add(transits.get(index));
-//            checkAcceptingTransits(transits.get(index).getNext(), checkedStates, acceptingTransits);
-//        }
-//    }
-
-//    public Set<NFATransit> getAcceptingTransits() {
-//        Set<NFAState> checkedStates = new HashSet<NFAState>();
-//        Set<NFATransit> acceptingTransits = new HashSet<NFATransit>();
-//        checkAcceptingTransits(startState, checkedStates, acceptingTransits);
-//        return acceptingTransits;
-//    }
-
-    //	public DFAState toDFA() throws Exception {
-//		DFAState dfa = new DFAState(false, NFAUtils.getEpsilonClosure(this.start));
-//		dfa.expand();
-//		return dfa;
-//
-//	}
     public NFA() {
         this(new NFAState(), new NFAState());
     }
@@ -193,99 +155,82 @@ public class NFA {
         return important;
     }
 
-//    public DFA toDFA() throws Exception {
-//        Set<DFAState> unmarked = new HashSet<DFAState>();
-//        Set<DFAState> marked = new HashSet<DFAState>();
-//        Map<Integer, DFAState> dfaStatesMap = new HashMap<Integer, DFAState>();
-//
-//        DFAState start = new DFAState(this.getImportantStates(this.getEpsilonClosure(this.startState)));
-//        dfaStatesMap.put(start.getNFAStates().hashCode(), start);
-//
-//        unmarked.add(start);
-//        int lastMissed = 0;
-//        int lastHit = 0;
-//
-//        while (!unmarked.isEmpty()) {
-////            if (missed > lastMissed + 1000 || hit > lastHit + 100000) {
-////                System.out.println("marked=" + marked.size() + ", unmarked=" + unmarked.size()
-////                        + ", hit=" + hit + ", missed=" + missed);
-////                lastMissed = missed;
-////                lastHit = hit;
-////            }
-//            DFAState dfaState = unmarked.iterator().next();
-//            Set<NFAState> nfaStates = dfaState.getNFAStates();
-//            Iterator<NFAState> it = nfaStates.iterator();
-//            Map<Integer, Set<NFAState>> intTransits = new HashMap<Integer, Set<NFAState>>();
-//            Map<String, Set<NFAState>> nonterminalTransits = new HashMap<String, Set<NFAState>>();
-//            while (it.hasNext()) {
-//                NFAState nfaState = it.next();
-//
-//                Iterator<Integer> inputIt = nfaState.getIntegerTransits().keySet().iterator();
-//                while (inputIt.hasNext()) {
-//                    Integer input = inputIt.next();
-//                    Set<NFAState> transits = nfaState.getIntegerTransits().get(input);
-//                    Set<NFAState> moveSet = intTransits.get(input);
-//                    if (moveSet != null) {
-//                        moveSet.addAll(transits);
-//                    } else {
-//                        moveSet = new HashSet<NFAState>();
-//                        moveSet.addAll(transits);
-//                        intTransits.put(input, moveSet);
-//                    }
-//                }
-//
-//                Iterator<String> nonterminalIt = nfaState.getNonterminalTransits().keySet().iterator();
-//                while (nonterminalIt.hasNext()) {
-//                    String nonterminal = nonterminalIt.next();
-//                    Set<NFAState> transits = nfaState.getNonterminalTransits().get(nonterminal);
-//                    Set<NFAState> moveSet = intTransits.get(nonterminal);
-//                    if (moveSet != null) {
-//                        moveSet.addAll(transits);
-//                    } else {
-//                        moveSet = new HashSet<NFAState>();
-//                        moveSet.addAll(transits);
-//                        nonterminalTransits.put(nonterminal, moveSet);
-//                    }
-//                }
-//
-//            }
-//            Iterator<Integer> inputIt = intTransits.keySet().iterator();
-//            while (inputIt.hasNext()) {
-//                Integer input = inputIt.next();
-//                Set<NFAState> transits = this.getImportantStates(this.getEpsilonClosure(intTransits.get(input)));
-//                if (dfaStatesMap.get(transits.hashCode()) != null) {
-//                    DFAState next = dfaStatesMap.get(transits.hashCode());
-//                    dfaState.addTransit(input, next);
-//                    hit ++;
-//                } else {
-//                    DFAState next = new DFAState(transits);
-//                    unmarked.add(next);
-//                    dfaState.addTransit(input, next);
-//                    dfaStatesMap.put(next.getNFAStates().hashCode(), next);
-//                    missed ++;
-//                }
-//            }
-//
-//            Iterator<String> nonterminalIt = nonterminalTransits.keySet().iterator();
-//            while (nonterminalIt.hasNext()) {
-//                String nonterminal = nonterminalIt.next();
-//                Set<NFAState> transits = this.getImportantStates(this.getEpsilonClosure(nonterminalTransits.get(nonterminal)));
-//                if (dfaStatesMap.get(transits.hashCode()) != null) {
-//                    DFAState next = dfaStatesMap.get(transits.hashCode());
-//                    dfaState.addTransit(nonterminal, next);
-//                    hit ++;
-//                } else {
-//                    DFAState next = new DFAState(transits);
-//                    unmarked.add(next);
-//                    dfaState.addTransit(nonterminal, next);
-//                    dfaStatesMap.put(next.getNFAStates().hashCode(), next);
-//                    missed ++;
-//                }
-//            }
-//            marked.add(dfaState);
-//            unmarked.remove(dfaState);
-//        }
-//        return new DFA(start);
-//    }
+    public DFA toDFA() throws Exception {
+        Assert.assertTrue(this.getAcceptingStates().size() == 1);
+        NFAState nfaAcceptingState = this.getAcceptingStates().iterator().next();
+
+        Set<DFAState> dfaAcceptingStates = new HashSet<DFAState>();
+
+        Map<Set<NFAState>, DFAState> nfaMap = new HashMap<Set<NFAState>, DFAState>();
+        Map<DFAState, Set<NFAState>> dfaMap = new HashMap<DFAState, Set<NFAState>>();
+
+        Set<Set<NFAState>> unmarked = new HashSet<Set<NFAState>>();
+        Set<Set<NFAState>> marked = new HashSet<Set<NFAState>>();
+        Set<DFAState> dfaStates = new HashSet<DFAState>();
+
+        Set<NFAState> nfaStart = this.getImportantStates(this.getEpsilonClosure(this.startState));
+        DFAState dfaStart = new DFAState();
+        if (nfaStart.contains(nfaAcceptingState)) dfaAcceptingStates.add(dfaStart);
+        nfaMap.put(nfaStart, dfaStart);
+        dfaMap.put(dfaStart, nfaStart);
+
+        unmarked.add(nfaStart);
+
+        int lastMissed = 0;
+        int lastHit = 0;
+
+        while (!unmarked.isEmpty()) {
+            if (missed >= lastMissed * 1.1 || hit >= lastHit * 1.1) {
+                System.out.println("marked=" + marked.size() + ", unmarked=" + unmarked.size()
+                        + ", hit=" + hit + ", missed=" + missed);
+                lastMissed = missed;
+                lastHit = hit;
+            }
+
+            Set<NFAState> nfaStates = unmarked.iterator().next();
+            unmarked.remove(nfaStates);
+            marked.add(nfaStates);
+
+            DFAState dfaState = nfaMap.get(nfaStates);
+
+            Iterator<NFAState> it = nfaStates.iterator();
+            Map<Integer, Set<NFAState>> transits = new HashMap<Integer, Set<NFAState>>();
+            while (it.hasNext()) {
+                NFAState nfaState = it.next();
+
+                Iterator<Integer> inputIt = nfaState.getTransition().keySet().iterator();
+                while (inputIt.hasNext()) {
+                    Integer input = inputIt.next();
+                    Set<NFAState> stateTransits = nfaState.getTransition(input);
+                    Set<NFAState> moveSet = transits.get(input);
+                    if (moveSet == null) {
+                        moveSet = new HashSet<NFAState>();
+                        transits.put(input, moveSet);
+                    }
+                    moveSet.addAll(stateTransits);
+                }
+
+            }
+            Iterator<Integer> inputIt = transits.keySet().iterator();
+            while (inputIt.hasNext()) {
+                Integer input = inputIt.next();
+                Set<NFAState> stateTransits = this.getImportantStates(this.getEpsilonClosure(transits.get(input)));
+                if (nfaMap.get(stateTransits) == null) {
+                    unmarked.add(stateTransits);
+                    DFAState next = new DFAState();
+                    if (stateTransits.contains(nfaAcceptingState)) dfaAcceptingStates.add(next);
+                    dfaState.addTransition(input, next);
+                    dfaMap.put(next, stateTransits);
+                    nfaMap.put(stateTransits, next);
+                    missed ++;
+                } else {
+                    DFAState next = nfaMap.get(stateTransits);
+                    dfaState.addTransition(input, next);
+                    hit ++;
+                }
+            }
+        }
+        return new DFA(dfaStart, dfaAcceptingStates);
+    }
 
 }

@@ -35,17 +35,17 @@ public class RuleName implements Element {//, Nonterminal {
 	private String rulename;
 	public String toString() { return prefix + rulename; }
 	
-	@Override
-	public boolean equals(Object o) {
-        if (o == null) return false;
-        if (!EqualHelper.equal(prefix, ((RuleName)o).prefix)) return false;
-        return EqualHelper.equal(rulename, ((RuleName)o).rulename);
-	}
-	
-	@Override
-	public int hashCode() {
-		return this.toString().hashCode();
-	}
+//	@Override
+//	public boolean equals(Object o) {
+//        if (o == null) return false;
+//        if (!EqualHelper.equal(prefix, ((RuleName)o).prefix)) return false;
+//        return EqualHelper.equal(rulename, ((RuleName)o).rulename);
+//	}
+//
+//	@Override
+//	public int hashCode() {
+//		return this.toString().hashCode();
+//	}
 
     public RuleName(String rulename) {
         this.prefix = "";
@@ -100,9 +100,9 @@ public class RuleName implements Element {//, Nonterminal {
 //		return rulenames.contains(rulename);
 //	}
     @Override
-    public Set<RuleName> getDependentRuleNames() {
-        Set<RuleName> ruleNames = new HashSet<RuleName>();
-        ruleNames.add(this);
+    public Set<String> getDependentRuleNames() {
+        Set<String> ruleNames = new HashSet<String>();
+        ruleNames.add(this.toString());
         return ruleNames;
     }
 

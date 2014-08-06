@@ -2,35 +2,54 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1e72a5c-41f1-40a2-8a48-289a769e0070" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/automata/NFATransit.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/automata/NFATransitType.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/abnf/AbnfState.java" afterPath="$PROJECT_DIR$/src/abnf/AbnfState.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/abnf/AbnfStatePosition.java" afterPath="$PROJECT_DIR$/src/abnf/AbnfStatePosition.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/analyzer/DependanceClosure.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/automata/DuplicateTransitionException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/automata/Function.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SIP-Closure-Lex.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SIP-Closure-Syntax.txt" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/SIP-Closure-Comment.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/abnf/AbnfParserFactory.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/abnf/AbnfState.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/abnf/AbnfStatePosition.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/automata/DFAStateFactory.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/automata/DFATransit.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/automata/DFATransitType.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/automata/Input.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/automata/NFAStateFactory.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/automata/NFAUtils.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/automata/RangedDFATransit.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/automata/FAState.java" afterPath="$PROJECT_DIR$/src/automata/NFAToDFA.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/abnf/Abnf.java" afterPath="$PROJECT_DIR$/src/abnf/Abnf.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/abnf/AbnfParser.java" afterPath="$PROJECT_DIR$/src/abnf/AbnfParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/abnf/AbnfParserTest.java" afterPath="$PROJECT_DIR$/test/abnf/AbnfParserTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/abnf/Alternation.java" afterPath="$PROJECT_DIR$/src/abnf/Alternation.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/abnf/AlternationTest.java" afterPath="$PROJECT_DIR$/test/abnf/AlternationTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/abnf/Assertion.java" afterPath="$PROJECT_DIR$/test/abnf/Assertion.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/abnf/CharVal.java" afterPath="$PROJECT_DIR$/src/abnf/CharVal.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/abnf/CharValTest.java" afterPath="$PROJECT_DIR$/test/abnf/CharValTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/abnf/Concatenation.java" afterPath="$PROJECT_DIR$/src/abnf/Concatenation.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/abnf/ConcatenationTest.java" afterPath="$PROJECT_DIR$/test/abnf/ConcatenationTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/automata/DFA.java" afterPath="$PROJECT_DIR$/src/automata/DFA.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/automata/DFAState.java" afterPath="$PROJECT_DIR$/src/automata/DFAState.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/automata/DFATransit.java" afterPath="$PROJECT_DIR$/src/automata/DFATransit.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/automata/DFATransitType.java" afterPath="$PROJECT_DIR$/src/automata/DFATransitType.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analyzer/DefinitionAnalyzer.java" afterPath="$PROJECT_DIR$/src/analyzer/DefinitionAnalyzer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/abnf/Elements.java" afterPath="$PROJECT_DIR$/src/abnf/Elements.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/abnf/ElementsTest.java" afterPath="$PROJECT_DIR$/test/abnf/ElementsTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/automata/FAState.java" afterPath="$PROJECT_DIR$/src/automata/FAState.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/abnf/Group.java" afterPath="$PROJECT_DIR$/src/abnf/Group.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/abnf/GroupTest.java" afterPath="$PROJECT_DIR$/test/abnf/GroupTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/automata/Input.java" afterPath="$PROJECT_DIR$/src/automata/Input.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/generator/JavaParser.java" afterPath="$PROJECT_DIR$/src/generator/JavaParser.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/automata/NFA.java" afterPath="$PROJECT_DIR$/src/automata/NFA.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/automata/NFAState.java" afterPath="$PROJECT_DIR$/src/automata/NFAState.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/automata/NFATest.java" afterPath="$PROJECT_DIR$/test/automata/NFATest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/automata/NFAUtils.java" afterPath="$PROJECT_DIR$/src/automata/NFAUtils.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/abnf/NumVal.java" afterPath="$PROJECT_DIR$/src/abnf/NumVal.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/abnf/NumValTest.java" afterPath="$PROJECT_DIR$/test/abnf/NumValTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/abnf/Option.java" afterPath="$PROJECT_DIR$/src/abnf/Option.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/abnf/OptionTest.java" afterPath="$PROJECT_DIR$/test/abnf/OptionTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/abnf/ProseVal.java" afterPath="$PROJECT_DIR$/src/abnf/ProseVal.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/abnf/ProseValTest.java" afterPath="$PROJECT_DIR$/test/abnf/ProseValTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/automata/RangedDFATransit.java" afterPath="$PROJECT_DIR$/src/automata/RangedDFATransit.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/abnf/RangedNumVal.java" afterPath="$PROJECT_DIR$/src/abnf/RangedNumVal.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/abnf/RangedNumValTest.java" afterPath="$PROJECT_DIR$/test/abnf/RangedNumValTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analyzer/RegularAnalyzer.java" afterPath="$PROJECT_DIR$/src/analyzer/RegularAnalyzer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/abnf/Repetition.java" afterPath="$PROJECT_DIR$/src/abnf/Repetition.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/abnf/RepetitionTest.java" afterPath="$PROJECT_DIR$/test/abnf/RepetitionTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/abnf/RuleName.java" afterPath="$PROJECT_DIR$/src/abnf/RuleName.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/abnf/RuleNameTest.java" afterPath="$PROJECT_DIR$/test/abnf/RuleNameTest.java" />
@@ -38,28 +57,28 @@
     </list>
     <ignored path="compiler-construction.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1373508849052" ignored="false" />
+    <file path="/Dummy.txt" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1381337512547" ignored="false" />
     <file path="$USER_HOME$/Documents/IdeaProjects/sip4x/.idea/workspace.xml" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1373264468231" ignored="false" />
-    <file path="/a.dummy" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1373264971582" ignored="false" />
+    <file path="/a.dummy" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1374204552761" ignored="false" />
     <file path="/NumValTest.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1374028562247" ignored="false" />
     <file path="/.gitignore" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1373267159583" ignored="false" />
-    <file path="/NFA.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1374025332175" ignored="false" />
-    <file path="/DFA.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1373419916695" ignored="false" />
-    <file path="/JavaParser.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1373426989410" ignored="false" />
+    <file path="/NFA.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1374216378964" ignored="false" />
+    <file path="/DFA.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1374216688186" ignored="false" />
+    <file path="/JavaParser.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1375411866548" ignored="false" />
     <file path="/fragment.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1373425871291" ignored="false" />
-    <file path="/NFATest.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1373426807547" ignored="false" />
+    <file path="/NFATest.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1374214154429" ignored="false" />
     <file path="/RepetitionTest.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1373428924050" ignored="false" />
     <file path="/FAState.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1374021625125" ignored="false" />
-    <file path="/NFAState.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1374031787148" ignored="false" />
-    <file path="/DFAState.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1373945065038" ignored="false" />
+    <file path="/NFAState.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1374111771736" ignored="false" />
+    <file path="/DFAState.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1374216739383" ignored="false" />
     <file path="/NfaState.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1373621790663" ignored="false" />
     <file path="/InverseFunction.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1373881888563" ignored="false" />
     <file path="/FunctionUtil.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1373881723794" ignored="false" />
-    <file path="/Function.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1373945231509" ignored="false" />
-    <file path="/Alternation.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1373950120868" ignored="false" />
-    <file path="/Concatenation.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1373950275061" ignored="false" />
-    <file path="/RuleName.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1373957427715" ignored="false" />
-    <file path="/RangedNumValTest.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1374032469931" ignored="false" />
+    <file path="/Function.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1374109206797" ignored="false" />
+    <file path="/Alternation.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1374204795836" ignored="false" />
+    <file path="/Concatenation.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1374204803789" ignored="false" />
+    <file path="/RuleName.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1374204956928" ignored="false" />
+    <file path="/RangedNumValTest.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1374111708277" ignored="false" />
     <file path="/AlternationTest.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1373958383583" ignored="false" />
     <file path="/Assertion.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1374028722632" ignored="false" />
     <file path="/NumVal.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1373965261471" ignored="false" />
@@ -68,6 +87,31 @@
     <file path="/SimpleNFA.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1374022080883" ignored="false" />
     <file path="/MyNFAState.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1374023110949" ignored="false" />
     <file path="/ConcatenationTest.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1374030478497" ignored="false" />
+    <file path="/DuplicateTransitionException.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1374108280520" ignored="false" />
+    <file path="/NFAStateFactory.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1374111686522" ignored="false" />
+    <file path="/ArrayFactory.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1374111534652" ignored="false" />
+    <file path="/RegularAnalyzer.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1374205099371" ignored="false" />
+    <file path="/Elements.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1374204771454" ignored="false" />
+    <file path="/DefinitionAnalyzer.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1374205006328" ignored="false" />
+    <file path="$PROJECT_DIR$/../HelloServlet/src/HelloServlet.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1375172892799" ignored="false" />
+    <file path="/HelloServlet.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1375172891231" ignored="false" />
+    <file path="/DependanceClosure.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1375411185119" ignored="false" />
+    <file path="$PROJECT_DIR$/../hello-hadoop/src/MaxTemperatureMapper.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1377574181917" ignored="false" />
+    <file path="$PROJECT_DIR$/../hello-hadoop/src/MaxTemperatureReducer.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1377574358629" ignored="false" />
+    <file path="$PROJECT_DIR$/../hello-hadoop/src/MaxTemperature.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1377574410812" ignored="false" />
+    <file path="$USER_HOME$/Documents/Coursera/Recommender/PA1/pa1-project/src/recsys_code_pa1.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1380027043217" ignored="false" />
+    <file path="/recsys_code_pa1.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1380039474093" ignored="false" />
+    <file path="$USER_HOME$/Documents/Coursera/Recommender/PA1/pa1-project/src/Rate.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1380026368962" ignored="false" />
+    <file path="/Rate.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1380026720777" ignored="false" />
+    <file path="$USER_HOME$/Documents/Coursera/Recommender/PA1/pa1-project/src/Rating.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1380036573191" ignored="false" />
+    <file path="$USER_HOME$/Documents/Coursera/Recommender/PA1/pa1-project/src/NonPersRecommender.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1380039493174" ignored="false" />
+    <file path="/NonPersRecommender.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1380036990087" ignored="false" />
+    <file path="$USER_HOME$/Documents/Coursera/Recommender/PA1/pa1-project/src/Association.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1380036558084" ignored="false" />
+    <file path="/Association.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1380029534283" ignored="false" />
+    <file path="$USER_HOME$/Documents/Coursera/Recommender/PA1/pa1-project/src/User.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1380036385840" ignored="false" />
+    <file path="/User.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1380038320929" ignored="false" />
+    <file path="$USER_HOME$/Documents/Coursera/Recommender/PA1/pa1-project/src/Mapping.java" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1380038321660" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/jdkAnnotations.jar!/java/lang/annotations.xml" changelist="b1e72a5c-41f1-40a2-8a48-289a769e0070" time="1381337516032" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,28 +172,73 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="NFA.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/automata/NFA.java">
+      <file leaf-file-name="Alternation.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/abnf/Alternation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="26" selection-start="434" selection-end="434" vertical-scroll-proportion="0.41095892">
+            <state line="54" column="42" selection-start="2019" selection-end="2019" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RepetitionTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/abnf/RepetitionTest.java">
+      <file leaf-file-name="CharVal.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/abnf/CharVal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="0" selection-start="768" selection-end="1099" vertical-scroll-proportion="0.0">
+            <state line="36" column="0" selection-start="1349" selection-end="1349" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RuleNameTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/abnf/RuleNameTest.java">
+      <file leaf-file-name="Concatenation.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/abnf/Concatenation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="34" selection-start="2023" selection-end="2023" vertical-scroll-proportion="0.0">
+            <state line="28" column="13" selection-start="1091" selection-end="1091" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Group.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/abnf/Group.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="13" selection-start="1161" selection-end="1161" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NumVal.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/abnf/NumVal.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="13" selection-start="1166" selection-end="1166" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Option.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/abnf/Option.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="13" selection-start="1161" selection-end="1161" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Repeat.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/abnf/Repeat.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="27" column="13" selection-start="1047" selection-end="1047" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Repetition.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/abnf/Repetition.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="31" column="13" selection-start="1142" selection-end="1142" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -158,72 +247,16 @@
       <file leaf-file-name="RuleName.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/abnf/RuleName.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="151" column="0" selection-start="4675" selection-end="4675" vertical-scroll-proportion="0.0">
+            <state line="31" column="13" selection-start="1115" selection-end="1115" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NFAState.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/automata/NFAState.java">
+      <file leaf-file-name="Rule.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/abnf/Rule.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="16" selection-start="769" selection-end="769" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#1308#1332#0" expanded="true" />
-                <element signature="e#1479#1489#0" expanded="true" />
-                <element signature="e#1698#1722#0" expanded="true" />
-                <element signature="e#3519#3529#0" expanded="true" />
-                <element signature="e#4760#4769#0" expanded="true" />
-                <element signature="e#6068#6078#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NumValTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/abnf/NumValTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="48" selection-start="1964" selection-end="1964" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OptionTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/abnf/OptionTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="31" selection-start="979" selection-end="979" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProseValTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/abnf/ProseValTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="55" column="44" selection-start="1837" selection-end="1837" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RangedNumValTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/abnf/RangedNumValTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="14" selection-start="1250" selection-end="1250" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NFAUtils.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/automata/NFAUtils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="221" column="26" selection-start="10301" selection-end="10301" vertical-scroll-proportion="0.0">
+            <state line="35" column="29" selection-start="1297" selection-end="1297" vertical-scroll-proportion="0.028142588">
               <folding />
             </state>
           </provider>
@@ -247,29 +280,29 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/automata/SimpleNFA.java" />
-        <option value="$PROJECT_DIR$/src/automata/MyNFAState.java" />
-        <option value="$PROJECT_DIR$/test/abnf/Assertion.java" />
-        <option value="$PROJECT_DIR$/test/abnf/NumValTest.java" />
-        <option value="$PROJECT_DIR$/test/abnf/AlternationTest.java" />
-        <option value="$PROJECT_DIR$/test/abnf/CharValTest.java" />
+        <option value="$PROJECT_DIR$/src/abnf/Group.java" />
+        <option value="$PROJECT_DIR$/src/abnf/NumVal.java" />
+        <option value="$PROJECT_DIR$/src/abnf/Option.java" />
+        <option value="$PROJECT_DIR$/src/abnf/ProseVal.java" />
+        <option value="$PROJECT_DIR$/src/abnf/RangedNumVal.java" />
+        <option value="$PROJECT_DIR$/src/abnf/RuleName.java" />
+        <option value="$PROJECT_DIR$/src/analyzer/DefinitionAnalyzer.java" />
+        <option value="$PROJECT_DIR$/src/analyzer/RegularAnalyzer.java" />
+        <option value="$PROJECT_DIR$/test/automata/NFATest.java" />
         <option value="$PROJECT_DIR$/src/automata/NFAState.java" />
-        <option value="$PROJECT_DIR$/test/abnf/ConcatenationTest.java" />
-        <option value="$PROJECT_DIR$/test/abnf/ElementsTest.java" />
-        <option value="$PROJECT_DIR$/test/abnf/GroupTest.java" />
-        <option value="$PROJECT_DIR$/test/abnf/OptionTest.java" />
-        <option value="$PROJECT_DIR$/test/abnf/ProseValTest.java" />
-        <option value="$PROJECT_DIR$/test/abnf/RepetitionTest.java" />
-        <option value="$PROJECT_DIR$/test/abnf/RuleNameTest.java" />
-        <option value="$PROJECT_DIR$/test/abnf/RangedNumValTest.java" />
         <option value="$PROJECT_DIR$/src/automata/NFA.java" />
+        <option value="$PROJECT_DIR$/src/automata/DFAState.java" />
+        <option value="$PROJECT_DIR$/src/automata/DFA.java" />
+        <option value="$PROJECT_DIR$/src/analyzer/DependanceClosure.java" />
+        <option value="$PROJECT_DIR$/src/generator/JavaParser.java" />
+        <option value="$PROJECT_DIR$/src/abnf/Alternation.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
     <option name="width" value="1280" />
-    <option name="height" value="704" />
+    <option name="height" value="717" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -297,7 +330,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -305,91 +337,10 @@
               <option name="myItemId" value="compiler-construction" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="compiler-construction" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="compiler-construction" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="compiler-construction" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="compiler-construction" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="automata" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="compiler-construction" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="compiler-construction" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="abnf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="compiler-construction" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="compiler-construction" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="compiler-construction" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="compiler-construction" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="automata" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -402,7 +353,7 @@
     <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="last_opened_file_path" value="$APPLICATION_HOME_DIR$/lib/junit-4.10.jar!/" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Documents/Coursera/Recommender/PA2/cbf-assignment/pom.xml" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
@@ -427,51 +378,7 @@
       <recent name="$PROJECT_DIR$/test/abnf" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in compiler-construction">
-    <configuration default="false" name="RepetitionTest" type="JUnit" factoryName="JUnit" temporary="true">
-      <module name="compiler-construction" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="abnf" />
-      <option name="MAIN_CLASS_NAME" value="abnf.RepetitionTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="RepetitionTest.testToNFA" type="JUnit" factoryName="JUnit" temporary="true">
-      <module name="compiler-construction" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="abnf" />
-      <option name="MAIN_CLASS_NAME" value="abnf.RepetitionTest" />
-      <option name="METHOD_NAME" value="testToNFA" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.NFATest.testToDFA">
     <configuration default="false" name="RuleNameTest.testToNFA" type="JUnit" factoryName="JUnit" temporary="true">
       <module name="compiler-construction" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -523,6 +430,50 @@
       <option name="PACKAGE_NAME" value="abnf" />
       <option name="MAIN_CLASS_NAME" value="abnf.RangedNumValTest" />
       <option name="METHOD_NAME" value="testToNFA" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="HashSetTest.testHashSet" type="JUnit" factoryName="JUnit" temporary="true">
+      <module name="compiler-construction" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="abnf" />
+      <option name="MAIN_CLASS_NAME" value="abnf.HashSetTest" />
+      <option name="METHOD_NAME" value="testHashSet" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="NFATest.testToDFA" type="JUnit" factoryName="JUnit" temporary="true">
+      <module name="compiler-construction" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="automata" />
+      <option name="MAIN_CLASS_NAME" value="automata.NFATest" />
+      <option name="METHOD_NAME" value="testToDFA" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -627,19 +578,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.RepetitionTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.RepetitionTest.testToNFA" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.RuleNameTest.testToNFA" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.All in compiler-construction" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.RangedNumValTest.testToNFA" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.RuleNameTest.testToNFA" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.All in compiler-construction" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.RangedNumValTest.testToNFA" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.HashSetTest.testHashSet" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.NFATest.testToDFA" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.All in compiler-construction" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.RangedNumValTest.testToNFA" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.RuleNameTest.testToNFA" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.RepetitionTest.testToNFA" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.RepetitionTest" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.NFATest.testToDFA" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.HashSetTest.testHashSet" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.All in compiler-construction" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.RangedNumValTest.testToNFA" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.RuleNameTest.testToNFA" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -699,31 +650,35 @@
       <created>1373508858764</created>
       <updated>1373508858764</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="To adjust NFA.">
+      <created>1374051888812</created>
+      <updated>1374051888812</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1280" height="704" extended-state="6" />
+    <frame x="0" y="22" width="1280" height="717" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39041096" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2504052" sideWeight="0.60958904" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39041096" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2504052" sideWeight="0.6717687" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20376712" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3282313" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -770,7 +725,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="To adjust automata." />
+    <option name="LAST_COMMIT_MESSAGE" value="To adjust NFA." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -788,6 +743,7 @@
     <MESSAGE value="Ignore output directory." />
     <MESSAGE value="Adjust the directory of test materials." />
     <MESSAGE value="To adjust automata." />
+    <MESSAGE value="To adjust NFA." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -797,125 +753,102 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_21.jdk/Contents/Home/src.zip!/java/util/ArrayList.java">
+    <entry file="file://$PROJECT_DIR$/src/analyzer/DefinitionAnalyzer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="529" column="0" selection-start="19200" selection-end="19200" vertical-scroll-proportion="0.0">
+        <state line="41" column="14" selection-start="1388" selection-end="1388" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SIP-Closure-Syntax.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SIP-Closure-Lex.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/analyzer/DependanceClosure.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="38" selection-start="1430" selection-end="1430" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/generator/JavaParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="130" column="86" selection-start="6005" selection-end="6005" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SIP-Closure.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="30" selection-start="29" selection-end="29" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/abnf/Alternation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="42" selection-start="2019" selection-end="2019" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/abnf/ElementsTest.java">
+    <entry file="file://$PROJECT_DIR$/src/abnf/CharVal.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="24" selection-start="982" selection-end="982" vertical-scroll-proportion="0.0">
+        <state line="36" column="0" selection-start="1349" selection-end="1349" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/abnf/ConcatenationTest.java">
+    <entry file="file://$PROJECT_DIR$/src/abnf/Concatenation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="18" selection-start="2170" selection-end="2170" vertical-scroll-proportion="0.0">
+        <state line="28" column="13" selection-start="1091" selection-end="1091" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/abnf/GroupTest.java">
+    <entry file="file://$PROJECT_DIR$/src/abnf/Group.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="28" selection-start="971" selection-end="971" vertical-scroll-proportion="0.0">
+        <state line="32" column="13" selection-start="1161" selection-end="1161" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/abnf/HashSetTest.java">
+    <entry file="file://$PROJECT_DIR$/src/abnf/NumVal.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="13" selection-start="310" selection-end="310" vertical-scroll-proportion="0.0">
+        <state line="32" column="13" selection-start="1166" selection-end="1166" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/abnf/NFAUtil.java">
+    <entry file="file://$PROJECT_DIR$/src/abnf/Option.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="13" selection-start="343" selection-end="343" vertical-scroll-proportion="0.0">
+        <state line="32" column="13" selection-start="1161" selection-end="1161" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/abnf/NumValTest.java">
+    <entry file="file://$PROJECT_DIR$/src/abnf/Repeat.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="48" selection-start="1964" selection-end="1964" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/abnf/OptionTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="31" selection-start="979" selection-end="979" vertical-scroll-proportion="0.0">
+        <state line="27" column="13" selection-start="1047" selection-end="1047" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/abnf/ProseValTest.java">
+    <entry file="file://$PROJECT_DIR$/src/abnf/Repetition.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="44" selection-start="1837" selection-end="1837" vertical-scroll-proportion="0.0">
+        <state line="31" column="13" selection-start="1142" selection-end="1142" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/abnf/RuleName.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="151" column="0" selection-start="4675" selection-end="4675" vertical-scroll-proportion="0.0">
+        <state line="31" column="13" selection-start="1115" selection-end="1115" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/abnf/RuleNameTest.java">
+    <entry file="file://$PROJECT_DIR$/src/abnf/Rule.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="34" selection-start="2023" selection-end="2023" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/abnf/RepetitionTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="0" selection-start="768" selection-end="1099" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/abnf/RangedNumValTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="14" selection-start="1250" selection-end="1250" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/automata/NFAUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="221" column="26" selection-start="10301" selection-end="10301" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/automata/NFAState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="16" selection-start="769" selection-end="769" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#1308#1332#0" expanded="true" />
-            <element signature="e#1479#1489#0" expanded="true" />
-            <element signature="e#1698#1722#0" expanded="true" />
-            <element signature="e#3519#3529#0" expanded="true" />
-            <element signature="e#4760#4769#0" expanded="true" />
-            <element signature="e#6068#6078#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/automata/NFA.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="26" selection-start="434" selection-end="434" vertical-scroll-proportion="0.41095892">
+        <state line="35" column="29" selection-start="1297" selection-end="1297" vertical-scroll-proportion="0.028142588">
           <folding />
         </state>
       </provider>

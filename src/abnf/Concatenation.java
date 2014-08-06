@@ -72,8 +72,8 @@ public class Concatenation implements Abnf {//implements DependenceAnalyzer {//i
 //		return result;
 //	}
     @Override
-    public Set<RuleName> getDependentRuleNames() {
-        Set<RuleName> ruleNames = new HashSet<RuleName>();
+    public Set<String> getDependentRuleNames() {
+        Set<String> ruleNames = new HashSet<String>();
 		for(int index = 0; index < repetitions.size(); index ++) {
 			ruleNames.addAll(repetitions.get(index).getDependentRuleNames());
 		}

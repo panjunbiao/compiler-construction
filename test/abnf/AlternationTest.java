@@ -1,13 +1,9 @@
 package abnf;
 
-import junit.framework.Assert;
 import org.junit.Test;
 import automata.NFA;
 import automata.NFAState;
-import automata.NFAStateFactory;
 //import automata.NFATransitType;
-import java.util.List;
-import java.util.ArrayList;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -37,22 +33,22 @@ public class AlternationTest {
         NFA expected;
         NFAState[] s;
 
-        nfa = tester.test(AbnfParserFactory.newInstance("%x11"));
-        s = NFAStateFactory.newInstances(2);
+        nfa = tester.test(AbnfParser.newInstance("%x11"));
+        s = NFAState.newInstances(2);
         s[0].addTransit(0x11, s[1]);
         expected = new NFA(s[0], s[1]);
         Assertion.assertEquivalent(expected, nfa);
 
-        nfa = tester.test(AbnfParserFactory.newInstance("%x11/%x31"));
+        nfa = tester.test(AbnfParser.newInstance("%x11/%x31"));
 
-        s = NFAStateFactory.newInstances(2);
+        s = NFAState.newInstances(2);
         s[0]    .addTransit(0x11, s[1]);
         s[0]    .addTransit('1', s[1]);
         expected = new NFA(s[0], s[1]);
         Assertion.assertEquivalent(expected, nfa);
 
-        nfa = tester.test(AbnfParserFactory.newInstance("%x31/(%x32 %x33)/[%x34 %x35]"));
-        s = NFAStateFactory.newInstances(12);
+        nfa = tester.test(AbnfParser.newInstance("%x31/(%x32 %x33)/[%x34 %x35]"));
+        s = NFAState.newInstances(12);
         s[0]    .addTransit('1', s[1]);
         s[0]    .addTransit('2', s[2])
                 .addTransit('3', s[1]);

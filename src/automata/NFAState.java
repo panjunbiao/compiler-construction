@@ -25,6 +25,15 @@ import java.util.*;
 public class NFAState implements Comparable<NFAState> {
     private static int COUNT = 0;
 
+    public static NFAState[] newInstances(int size) {
+        NFAState[] instances = new NFAState[size];
+        for(int index = 0; index < size; index ++) {
+            instances[index] = new NFAState();
+        }
+        return instances;
+    }
+
+
     private int id;
 
     public int getId() { return this.id; }
@@ -44,23 +53,7 @@ public class NFAState implements Comparable<NFAState> {
     public Set<NFAState> getEpsilonTransition() { return this.epsilonTransition; }
 
     public Map<NFAState, Set<Integer>> getInverseTransition() {
-        Map<NFAState, Set<Integer>> inverse = new HashMap<NFAState, Set<Integer>>();
-
-        Iterator<Integer> inputIt = this.transition.keySet().iterator();
-        while (inputIt.hasNext()) {
-            Integer input = inputIt.next();
-            Iterator<NFAState> stateIt = this.getTransition(input).iterator();
-            while (stateIt.hasNext()) {
-                NFAState state = stateIt.next();
-                Set<Integer> inputs = inverse.get(state);
-                if (inputs == null) {
-                    inputs = new HashSet<Integer>();
-                    inverse.put(state, inputs);
-                }
-                inputs.add(input);
-            }
-        }
-        return inverse;
+        return new Function<Integer, NFAState>().getInverseOneToMany(this.transition);
     }
 
     public NFAState addTransit(int input) {
@@ -129,7 +122,7 @@ public class NFAState implements Comparable<NFAState> {
 
             System.out.print(this.id);
             System.out.print(" -> ");
-            System.out.print(nextState.id);//(this.getTransits().get(index).getNext().getId());
+            System.out.print(nextState.id);
             System.out.print(" [label=\"");
 
             StringBuilder label = new StringBuilder();
@@ -156,19 +149,6 @@ public class NFAState implements Comparable<NFAState> {
 
             nextState.printToDot(printed);
         }
-//        Iterator<NFAState> itEpsilonState = this.epsilonTransition.iterator();
-//        while (itEpsilonState.hasNext()) {
-//            NFAState epsilon = itEpsilonState.next();
-//            System.out.print(this.id);
-//            System.out.print(" -> ");
-//            System.out.print(epsilon.id);
-//            System.out.print(" [label=\"");
-//            System.out.print("EPSILON");
-//            System.out.println("\"];");
-//
-//            epsilon.printToDot(printed);
-//        }
-
     }
 
     public void printToDot() {

@@ -3,10 +3,9 @@ package automata;
 /**
  * Created with IntelliJ IDEA.
  * User: james
- * Date: 7/16/13
- * Time: 6:12 PM
+ * Date: 7/19/13
+ * Time: 9:52 AM
  * To change this template use File | Settings | File Templates.
  */
-public interface FAState {
-    public int getId();
+public class NFAToDFA {
 }

@@ -36,7 +36,7 @@ import java.util.Set;
 import automata.*;
 
 public interface Abnf {
-    public Set<RuleName> getDependentRuleNames();
+    public Set<String> getDependentRuleNames();
     public NFA toNFA(Map<String, Rule> rules) throws IllegalAbnfException;
     public void toNFA(NFAState startState, NFAState acceptingState, Map<String, Rule> rules) throws IllegalAbnfException;
 //    public void toNFA(NFAState startState, Set<NFAState> acceptingStates, Map<String, Rule> rules) throws IllegalAbnfException;

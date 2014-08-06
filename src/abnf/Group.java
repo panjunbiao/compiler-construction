@@ -70,7 +70,7 @@ public class Group implements Element {//, Operation {
 //	}
 
     @Override
-    public Set<RuleName> getDependentRuleNames() {
+    public Set<String> getDependentRuleNames() {
 		return alternation.getDependentRuleNames();
 	}
 
